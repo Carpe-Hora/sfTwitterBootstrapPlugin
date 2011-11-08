@@ -1,0 +1,184 @@
+/* --------------------------------------------------
+Table of Contents
+-----------------------------------------------------
+:: General
+:: Bootstrap surclass
+:: Spacing
+:: Module
+:: Top Bar
+:: Main Content
+*/
+
+
+
+
+/* -----------------------------------------
+General
+----------------------------------------- */
+body { padding-top: 60px; }
+body .breadcrumb { margin-top: -20px;}
+ul li { list-style-type:none;}
+
+.footer { text-align:center; border-top:1px solid #DDD;}
+
+
+/*link*/
+a { color:#049CDB; }
+a:hover { color:#047DA9; }
+
+/* Headings*/
+h1, .h1 { color: #404040; }
+h2, .h2 { color: #666666; font-weight:bold; border-bottom:1px solid #EFECEC;}
+h3, .h3 { color: #404040; }
+h4, .h4 { color: #404040; }
+h5, .h5 { color: #404040; }
+h6, .h6 { color: #404040; }
+
+/* Helpers */
+.fLeft { float:left; }
+.fRight { float:right; }
+.center { text-align:center; }
+.input-obligation { font-weight:bold; }
+.input-obligation > span { color:red; }
+
+/* Clearfix */
+/* For modern browsers */
+.cf:before,
+.cf:after { content:""; display:table; }
+.cf:after { clear:both; }
+/* For IE 6/7 (trigger hasLayout) */
+.cf { zoom:1; }
+
+
+/* -----------------------------------------
+Bootstrap surclass
+----------------------------------------- */
+
+.primary-color { color:#049CDB;}
+
+.container-fluid > .content { margin-left: 328px; }
+.container-fluid > .sidebar { float: left; width: 319px; }
+
+.table .actions { height: 27px; }
+.table .actions a { vertical-align: 6px; }
+.table ul { margin:0px;}
+.table-action li { display:inline-block;}
+.edit { background:url("../img/edit_icon.png") no-repeat top left; padding-left: 20px; }
+.delete { background:url("../img/delete_icon.png") no-repeat top left; padding-left: 20px; }
+
+.close { line-height: 18.5px; }
+
+td input.xlarge { width:97%;}
+
+.zebra-striped tbody .greystock:first-child td {
+    background-color: #E7EBEB;
+}
+
+.input .arrow { vertical-align: 40px; }
+
+form div.clearfix.error { padding: 0px 0px 10px 0px ;}
+
+/* -----------------------------------------
+Spacing
+----------------------------------------- */
+/* spacing helpers
+p,m = padding,margin
+a,t,r,b,l,h,v = all,top,right,bottom,left,horizontal,vertical
+s,m,l,n = small(5px),medium(10px),large(20px),none(0px)
+*/
+
+.ptn,.pvn,.pan{padding-top:0px !important}
+.pts,.pvs,.pas{padding-top:5px !important}
+.ptm,.pvm,.pam{padding-top:10px !important}
+.ptl,.pvl,.pal{padding-top:20px !important}
+.prn,.phn,.pan{padding-right:0px !important}
+.prs,.phs,.pas{padding-right:5px !important}
+.prm,.phm,.pam{padding-right:10px !important}
+.prl,.phl,.pal{padding-right:20px !important}
+.pbn,.pvn,.pan{padding-bottom:0px !important}
+.pbs,.pvs,.pas{padding-bottom:5px !important}
+.pbm,.pvm,.pam{padding-bottom:10px !important}
+.pbl,.pvl,.pal{padding-bottom:20px !important}
+.pln,.phn,.pan{padding-left:0px !important}
+.pls,.phs,.pas{padding-left:5px !important}
+.plm,.phm,.pam{padding-left:10px !important}
+.pll,.phl,.pal{padding-left:20px !important}
+.mtn,.mvn,.man{margin-top:0px !important}
+.mts,.mvs,.mas{margin-top:5px !important}
+.mtm,.mvm,.mam{margin-top:10px !important}
+.mtl,.mvl,.mal{margin-top:20px !important}
+.mrn,.mhn,.man{margin-right:0px !important}
+.mrs,.mhs,.mas{margin-right:5px !important}
+.mrm,.mhm,.mam{margin-right:10px !important}
+.mrl,.mhl,.mal{margin-right:20px !important}
+.mbn,.mvn,.man{margin-bottom:0px !important}
+.mbs,.mvs,.mas{margin-bottom:5px !important}
+.mbm,.mvm,.mam{margin-bottom:10px !important}
+.mbl,.mvl,.mal{margin-bottom:20px !important}
+.mln,.mhn,.man{margin-left:0px !important}
+.mls,.mhs,.mas{margin-left:5px !important}
+.mlm,.mhm,.mam{margin-left:10px !important}
+.mll,.mhl,.mal{margin-left:20px !important}
+
+
+/* -----------------------------------------
+Module
+----------------------------------------- */
+
+/* mod */
+.mod{margin:10px;}
+.mod .inner{}
+.ft, .hd{overflow:hidden; *overflow:visible; zoom:1;}
+
+/* mod login skin */
+.login .inner{
+	-moz-box-shadow:0px 0px 4px #928F8F;
+	-webkit-box-shadow:0px 0px 4px #928F8F;
+	box-shadow:0px 0px 4px #928F8F;
+	/*IE 7 AND 8 DO NOT SUPPORT BLUR PROPERTY OF SHADOWS*/
+	-webkit-border-radius: 5px;
+	-moz-border-radius: 5px;
+	border-radius: 5px;
+	width:500px;
+	margin:0 auto; 
+
+}
+
+.login form, .login fieldset, .login .actions { margin-bottom:0px; }
+
+/* mod dash skin */
+.dash {margin-top:30px;}
+.dash .hd { border-top: 2px solid #049CDB; background-color:#F5F5F5; }
+.dash .element {display:block; }
+.dash ul { margin-top:10px; }
+.dash ul li { display:inline-block; margin-right:30px; text-align: center; width: 135px; }
+
+/* mod filter skin */
+.filter {border:1px solid #DDD;}
+.filter .hd { border-top: 2px solid #049CDB; background-color:#F5F5F5; }
+.filter form label { width: 60px; }
+.filter form .input { margin-left: 98px; }
+
+/* -----------------------------------------
+Top Bar
+----------------------------------------- */
+.logged { background:url("../img/user_login.png") no-repeat center left; padding:0 20px; }
+
+/* -----------------------------------------
+Main Content
+----------------------------------------- */
+
+.smad { margin-top: 20px; padding:10px 20px; background-color:#F5F5F5; border-top:1px solid #DDD; border-bottom:1px solid #DDD;}
+.smad .clearfix {margin:0;}
+.smad ul li { display:inline-block;}
+.smad .pic img { vertical-align: -2px;}
+
+.table-result { font-weight:bold; padding:5px;}
+
+.icon-list li { -moz-transition: all 0.3s linear 0s; }
+.icon-list li:hover { background-color:#DDD; border-radius:20px; }
+
+.back { background:url("../img/list_icon.png") no-repeat top left;}
+
+
+
