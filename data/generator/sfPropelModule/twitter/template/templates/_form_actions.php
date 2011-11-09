@@ -1,4 +1,4 @@
-<ul class="sf_admin_actions">
+<ul class="actions">
 <?php foreach (array('new', 'edit') as $action): ?>
 <?php if ('new' == $action): ?>
 [?php if ($form->isNew()): ?]
