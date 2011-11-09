@@ -22,7 +22,7 @@
     <?php foreach ($categories as $name => $category): ?>
     <?php   if (sfTwitterBootstrap::hasPermission($category, $sf_user)): ?>
     <?php     if (sfTwitterBootstrap::hasItemsMenu($category['items'])): ?>
-    <li class="node"><a href="#" class="dropdown-toggle" ><?php echo __(isset($category['name']) ? $category['name'] : $name) ?></a>
+    <li class="dropdown"><a href="#" class="dropdown-toggle" ><?php echo __(isset($category['name']) ? $category['name'] : $name) ?></a>
       <ul class="dropdown-menu">
         <?php include_partial('sfTwitterBootstrap/menu_list', array('items' => $category['items'], 'items_in_menu' => true)) ?>
       </ul>
