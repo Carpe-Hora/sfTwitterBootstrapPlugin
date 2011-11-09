@@ -1,4 +1,4 @@
-<ul class="actions">
+<div class="actions">
 <?php foreach (array('new', 'edit') as $action): ?>
 <?php if ('new' == $action): ?>
 [?php if ($form->isNew()): ?]
@@ -7,7 +7,7 @@
 <?php endif; ?>
 <?php foreach ($this->configuration->getValue($action.'.actions') as $name => $params): ?>
 <?php if ('_delete' == $name): ?>
-  <?php echo $this->addCredentialCondition('[?php echo $helper->linkToDelete($form->getObject(), '.$this->asPhp($params).') ?]', $params) ?>
+  <?php echo $this->addCredentialCondition('[?php echo $helper->linkToDeleteBtn($form->getObject(), '.$this->asPhp($params).') ?]', $params) ?>
 
 <?php elseif ('_list' == $name): ?>
   <?php echo $this->addCredentialCondition('[?php echo $helper->linkToList('.$this->asPhp($params).') ?]', $params) ?>
@@ -32,4 +32,4 @@
 <?php endforeach; ?>
 <?php endforeach; ?>
 [?php endif; ?]
-</ul>
+</div>

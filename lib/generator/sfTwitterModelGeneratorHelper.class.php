@@ -30,14 +30,24 @@ abstract class sfTwitterModelGeneratorHelper extends sfModelGeneratorHelper
     return '<li class="delete">'.link_to(__($params['label'], array(), 'sf_admin'), $this->getUrlForAction('delete'), $object, array('method' => 'delete', 'confirm' => !empty($params['confirm']) ? __($params['confirm'], array(), 'sf_admin') : $params['confirm'])).'</li>';
   }
 
+  public function linkToDeleteBtn($object, $params)
+{
+    if ($object->isNew())
+    {
+      return '';
+    }
+
+    return '<li class="btn danger delete">'.link_to(__($params['label'], array(), 'sf_admin'), $this->getUrlForAction('delete'), $object, array('method' => 'delete', 'confirm' => !empty($params['confirm']) ? __($params['confirm'], array(), 'sf_admin') : $params['confirm'])).'</li>';
+  }
+
   public function linkToList($params)
   {
-    return '<li class="sf_admin_action_list">'.link_to(__($params['label'], array(), 'sf_admin'), '@'.$this->getUrlForAction('list')).'</li>';
+    return '<li class="back pll mll">'.link_to(__($params['label'], array(), 'sf_admin'), '@'.$this->getUrlForAction('list')).'</li>';
   }
 
   public function linkToSave($object, $params)
   {
-    return '<li class="sf_admin_action_save"><input type="submit" value="'.__($params['label'], array(), 'sf_admin').'" /></li>';
+    return '<li><input class="btn primary mlm" type="submit" value="'.__($params['label'], array(), 'sf_admin').'" /></li>';
   }
 
   public function linkToSaveAndAdd($object, $params)
@@ -47,6 +57,6 @@ abstract class sfTwitterModelGeneratorHelper extends sfModelGeneratorHelper
       return '';
     }
 
-    return '<li class="sf_admin_action_save_and_add"><input type="submit" value="'.__($params['label'], array(), 'sf_admin').'" name="_save_and_add" /></li>';
+    return '<li><input class="btn success mlm" type="submit" value="'.__($params['label'], array(), 'sf_admin').'" name="_save_and_add" /></li>';
   }
 }

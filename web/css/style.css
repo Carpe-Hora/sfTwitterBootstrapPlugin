@@ -175,5 +175,6 @@ Main Content
 
 .back { background:url("../images/list_icon.png") no-repeat top left;}
 
-
+.btn a { color: #ffffff; }
+.actions li { display: inline }
 
