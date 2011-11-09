@@ -40,3 +40,12 @@ all:
   sf_twitter_bootstrap:
     site:  Your project name
 ```
+
+## Include a slot in all your screens :
+
+Edit view.yml
+
+```yaml
+default:
+  sf_twitter_bootstrap_permanent_slot: [ Module, component ]
+```

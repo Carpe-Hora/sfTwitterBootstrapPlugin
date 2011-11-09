@@ -34,3 +34,5 @@ use_helper('I18N');
   <?php endif; ?>
 </ul>
 <?php endif; // if breadcrumbs are enabled ?>
+
+<?php include_component_slot('sf_twitter_bootstrap_permanent_slot') ?>
