@@ -17,7 +17,7 @@ abstract class sfTwitterModelGeneratorHelper extends sfModelGeneratorHelper
 
   public function linkToEdit($object, $params)
   {
-    return '<li class="sf_admin_action_edit">'.link_to(__($params['label'], array(), 'sf_admin'), $this->getUrlForAction('edit'), $object).'</li>';
+    return '<li class="edit">'.link_to(__($params['label'], array(), 'sf_admin'), $this->getUrlForAction('edit'), $object).'</li>';
   }
 
   public function linkToDelete($object, $params)
@@ -27,7 +27,7 @@ abstract class sfTwitterModelGeneratorHelper extends sfModelGeneratorHelper
       return '';
     }
 
-    return '<li class="sf_admin_action_delete">'.link_to(__($params['label'], array(), 'sf_admin'), $this->getUrlForAction('delete'), $object, array('method' => 'delete', 'confirm' => !empty($params['confirm']) ? __($params['confirm'], array(), 'sf_admin') : $params['confirm'])).'</li>';
+    return '<li class="delete">'.link_to(__($params['label'], array(), 'sf_admin'), $this->getUrlForAction('delete'), $object, array('method' => 'delete', 'confirm' => !empty($params['confirm']) ? __($params['confirm'], array(), 'sf_admin') : $params['confirm'])).'</li>';
   }
 
   public function linkToList($params)
