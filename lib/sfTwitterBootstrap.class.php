@@ -245,8 +245,8 @@ class sfTwitterBootstrap
    */
   public static function initItem(&$item, $key)
   {
-    $image = isset($item['image']) ? $item['image'] : sfAdminDash::getProperty('default_image');
-    $image = (substr($image, 0, 1) == '/') ? $image : (sfAdminDash::getProperty('image_dir') . $image);
+    $image = isset($item['image']) ? $item['image'] : self::getProperty('default_image');
+    $image = (substr($image, 0, 1) == '/') ? $image : (self::getProperty('image_dir') . $image);
 
     $item['image'] = $image;
 
