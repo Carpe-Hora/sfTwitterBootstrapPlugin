@@ -8,12 +8,12 @@
     <div>
       [?php echo $form[$name]->renderLabel($label) ?]
 
-      <div class="content">[?php echo $form[$name]->render($attributes instanceof sfOutputEscaper ? $attributes->getRawValue() : $attributes) ?]</div>
+      <div class="input">[?php echo $form[$name]->render($attributes instanceof sfOutputEscaper ? $attributes->getRawValue() : $attributes) ?]</div>
 
       [?php if ($help): ?]
-        <div class="help">[?php echo __($help, array(), '<?php echo $this->getI18nCatalogue() ?>') ?]</div>
+        <span class="help-block">[?php echo __($help, array(), '<?php echo $this->getI18nCatalogue() ?>') ?]</span>
       [?php elseif ($help = $form[$name]->renderHelp()): ?]
-        <div class="help">[?php echo $help ?]</div>
+        <span class="help-block">[?php echo $help ?]</span>
       [?php endif; ?]
     </div>
   </div>

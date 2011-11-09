@@ -2,7 +2,7 @@
 [?php include_partial('<?php echo $this->getModuleName() ?>/assets') ?]
 
 <div id="sf_admin_container">
-  <h1>[?php echo <?php echo $this->getI18NString('new.title') ?> ?]</h1>
+  <h2 class="mbl">[?php echo <?php echo $this->getI18NString('new.title') ?> ?]</h2>
 
   [?php include_partial('<?php echo $this->getModuleName() ?>/flashes') ?]
 

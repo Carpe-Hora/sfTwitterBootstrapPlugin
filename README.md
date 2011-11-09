@@ -76,3 +76,14 @@ Edit view.yml
 default:
   sf_twitter_bootstrap_permanent_slot: [ Module, component ]
 ```
+
+## Highlight required label
+
+In your form class :
+
+```php
+$formatterObj = $this->widgetSchema->getFormFormatter();
+$formatterObj->setValidatorSchema($this->getValidatorSchema());
+```
+
+Of course, if you are using an admingenerator it's automatic !!
