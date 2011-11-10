@@ -68,7 +68,7 @@ Bootstrap surclass
 
 .close { line-height: 18.5px; }
 
-td input.xlarge { width:97%;}
+td input.xlarge, td select.xlarge  { width:97%;}
 
 .zebra-striped tbody .greystock:first-child td {
     background-color: #E7EBEB;
