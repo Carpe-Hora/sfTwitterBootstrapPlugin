@@ -22,12 +22,12 @@ class sfTwitterBootstrapComponents extends sfComponents
     }
     else
     {
-      if (!sfAdminDash::routeExists($this->module_link = $this->getContext()->getModuleName(), $this->getContext()))
+      if (!sfTwitterBootstrap::routeExists($this->module_link = $this->getContext()->getModuleName(), $this->getContext()))
       {
         // if we cannot sniff the module link, we set it to null and later simply output is as a string in the breadcrumbs
         $this->module_link = null;
         // but before we do that, one last check - it's possible that the module name is different from the object name and that's the reason we can't sniff it
-        foreach (sfAdminDash::getAllItems() as $name => $item) if ($name == $this->getContext()->getModuleName()) { $this->module_link = $item['url']; break; }
+        foreach (sfTwitterBootstrap::getAllItems() as $name => $item) if ($name == $this->getContext()->getModuleName()) { $this->module_link = $item['url']; break; }
       }
 
       $this->module_link_name = sfTwitterBootstrap::getModuleName($this->getContext());

@@ -20,7 +20,7 @@ use_helper('I18N');
     </div>
 </div>
 
-<?php if (sfAdminDash::getProperty('include_path')): ?>
+<?php if (sfTwitterBootstrap::getProperty('include_path')): ?>
 <ul class='breadcrumb mbs'>
   <li>
     <?php echo link_to('Home', sfTwitterBootstrap::getProperty('dashboard_url')) ?>
