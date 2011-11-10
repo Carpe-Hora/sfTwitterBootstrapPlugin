@@ -70,7 +70,7 @@ Bootstrap surclass
 
 td input.xlarge, td select.xlarge  { width:97%;}
 
-.zebra-striped tbody .greystock:first-child td {
+.zebra-striped tbody .greystock td, .zebra-striped tbody .greystock:hover td {
     background-color: #E7EBEB;
 }
 

@@ -6,9 +6,6 @@
 [?php endif; ?]
 <?php endif; ?>
 <div class="sf_admin_list">
-  [?php if (!$pager->getNbResults()): ?]
-    <p>[?php echo __('No result', array(), 'sf_admin') ?]</p>
-  [?php else: ?]
      <table class="sortTable zebra-striped mbn">
       <thead>
         <tr>
@@ -25,6 +22,12 @@
         <?php if ($this->configuration->hasFilterForm()): ?>
             [?php include_partial('<?php echo $this->getModuleName() ?>/filters', array('filters' => $filters, 'configuration' => $configuration)) ?]
         <?php endif; ?>
+
+  [?php if (!$pager->getNbResults()): ?]
+    <tr><td colspan="<?php echo ($this->configuration->getValue('list.batch_actions') ? 1 : 0) + count($this->configuration->getValue('list.display')) + ($this->configuration->getValue('list.object_actions') || $this->configuration->hasFilterForm() ? 1 : 0) ?>">[?php echo __('No result', array(), 'sf_admin') ?]</td></tr>
+  [?php else: ?]
+
+
         [?php foreach ($pager->getResults() as $i => $<?php echo $this->getSingularName() ?>): $odd = fmod(++$i, 2) ? 'odd' : 'even' ?]
           <tr class="sf_admin_row [?php echo $odd ?]">
 <?php if ($this->configuration->getValue('list.batch_actions')): ?>
@@ -36,9 +39,12 @@
 <?php endif; ?>
           </tr>
         [?php endforeach; ?]
-      </tbody>
+
+  [?php endif; ?]
+        </tbody>
     </table>
 
+    [?php if ($pager->getNbResults()): ?]
     <div class="cf">
         <div class="table-result fLeft">
             [?php echo format_number_choice('[0] no result|[1] 1 result|(1,+Inf] %1% results', array('%1%' => $pager->getNbResults()), $pager->getNbResults(), 'sf_admin') ?]
@@ -50,8 +56,7 @@
           [?php include_partial('<?php echo $this->getModuleName() ?>/pagination', array('pager' => $pager)) ?]
         [?php endif; ?]
     </div>
-
-  [?php endif; ?]
+    [?php endif; ?]
 </div>
 <script type="text/javascript">
 /* <![CDATA[ */

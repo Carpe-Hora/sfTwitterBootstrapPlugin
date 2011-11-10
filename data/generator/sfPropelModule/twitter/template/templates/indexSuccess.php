@@ -10,9 +10,6 @@
   </div>
 
   <div class="table mtm">
-<?php if ($this->configuration->getValue('list.batch_actions')): ?>
-    <form action="[?php echo url_for('<?php echo $this->getUrlForAction('collection') ?>', array('action' => 'batch')) ?]" method="post">
-<?php endif; ?>
 
 <?php if (0 != count($this->configuration->getValue('list.actions')) || 0 != count($this->configuration->getValue('list.batch_actions'))): ?>
     <div class="actions pam mtn">
@@ -20,11 +17,7 @@
       [?php include_partial('<?php echo $this->getModuleName() ?>/list_actions', array('helper' => $helper)) ?]
     </div>
 <?php endif; ?>
-
     [?php include_partial('<?php echo $this->getModuleName() ?>/list', array(<?php if ($this->configuration->hasFilterForm()): ?>'filters' => $filters, 'configuration' => $configuration,<?php endif; ?> 'pager' => $pager, 'sort' => $sort, 'helper' => $helper)) ?]
-<?php if ($this->configuration->getValue('list.batch_actions')): ?>
-    </form>
-<?php endif; ?>
   </div>
 
   <div id="sf_admin_footer">
