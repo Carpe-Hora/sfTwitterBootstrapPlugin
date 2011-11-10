@@ -28,7 +28,7 @@ use_helper('I18N');
   <?php if ($sf_context->getModuleName() != 'sfAdminDash' && $sf_context->getActionName() != 'dashboard'): ?>
     <li><span class="divider">/</span>
     <?php echo null !== $module_link ? link_to($module_link_name, $module_link) : $module_link_name; ?>
-    <?php if (null != $action_link): ?>
+    <?php if (null != $action_link): ?><span class="divider">/</span>
        <?php echo link_to(__(ucfirst($action_link_name)), $action_link); ?>
     <?php endif ?></li>
   <?php endif; ?>
