@@ -78,6 +78,7 @@ td input.xlarge, td select.xlarge  { width:97%;}
 
 form div.clearfix.error { padding: 0px 0px 10px 0px ;}
 
+.actions form { margin: 0 }
 /* -----------------------------------------
 Spacing
 ----------------------------------------- */
