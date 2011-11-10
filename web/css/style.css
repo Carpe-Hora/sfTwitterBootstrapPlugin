@@ -178,3 +178,6 @@ Main Content
 .btn a { color: #ffffff; }
 .actions li { display: inline }
 
+#batch_checked_ids { display: none; }
+
+

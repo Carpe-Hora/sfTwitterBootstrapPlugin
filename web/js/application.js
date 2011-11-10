@@ -36,3 +36,14 @@ $(document).ready(function(){
       })
   })
 });
+
+/**
+ * Function to copy ids[] on a batch actions to and hidden fields beacause chackboxes
+ * can't be into a form
+ */
+function copyIds()
+{
+    $('.sf_admin_batch_checkbox:checked').each(function() {
+        $('#batch_checked_ids').append('<option value="'+$(this).val()+'" selected="selected">'+$(this).val()+'</option>');
+    });
+}
