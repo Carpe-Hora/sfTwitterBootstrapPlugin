@@ -18,6 +18,7 @@ General
 body { padding-top: 60px; }
 body .breadcrumb { margin-top: -20px;}
 ul li { list-style-type:none;}
+ul { margin:0;}
 
 .footer { text-align:center; border-top:1px solid #DDD;}
 
@@ -68,9 +69,9 @@ Bootstrap surclass
 
 .close { line-height: 18.5px; }
 
-td input.xlarge, td select.xlarge  { width:97%;}
+td input.xlarge { width:97%;}
 
-.zebra-striped tbody .greystock td, .zebra-striped tbody .greystock:hover td {
+.zebra-striped tbody .greystock:first-child td {
     background-color: #E7EBEB;
 }
 
@@ -78,7 +79,25 @@ td input.xlarge, td select.xlarge  { width:97%;}
 
 form div.clearfix.error { padding: 0px 0px 10px 0px ;}
 
-.actions form { margin: 0 }
+fieldset { background: #F5F5F5; border:1px solid #D5D8D8; margin-bottom: 0; }
+fieldset legend { 
+    background: none repeat scroll 0 0 #CCCCCC;
+    border-bottom: 1px solid #FFFFFF;
+    color: #333333;
+    font-size: 15px;
+    font-weight: bold;
+    line-height: 2;
+    padding: 0 0 0 5px;
+    width: 99.7%;
+}
+.actions {
+margin-top: 0;
+border-top:0;
+}
+
+.loginFieldset { background:none; border:none;}
+.loginFieldset legend { background:none; padding-left: 150px;}
+
 /* -----------------------------------------
 Spacing
 ----------------------------------------- */
@@ -169,6 +188,11 @@ Top Bar
 Main Content
 ----------------------------------------- */
 
+.smad { margin-top: 20px; padding:10px 20px; background-color:#F5F5F5; border-top:1px solid #DDD; border-bottom:1px solid #DDD;}
+.smad .clearfix {margin:0;}
+.smad ul li { display:inline-block;}
+.smad .pic img { vertical-align: -2px;}
+
 .table-result { font-weight:bold; padding:5px;}
 
 .icon-list li { -moz-transition: all 0.3s linear 0s; }
@@ -178,7 +202,5 @@ Main Content
 
 .btn a { color: #ffffff; }
 .actions li { display: inline }
-
 #batch_checked_ids { display: none; }
-
 

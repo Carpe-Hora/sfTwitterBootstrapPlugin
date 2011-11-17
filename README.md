@@ -99,7 +99,7 @@ Overwrite the signinSuccess into apps/backend/modules/sfGuardAuth/templates/sign
         <div class="bd">
             <form action="<?php echo url_for('@sf_guard_signin') ?>" method="post">
                 <?php echo $form->renderHiddenFields(); ?>
-                <fieldset class="mtm">
+                <fieldset class="loginFieldset">
                     <legend><?php echo sfTwitterBootstrap::getProperty('site'); ?></legend>
                     <div class="clearfix <?php echo $form['username']->hasError() ? 'error': '' ?>">
                         <?php echo $form['username']->renderRow() ?>
