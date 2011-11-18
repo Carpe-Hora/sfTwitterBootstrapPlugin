@@ -1,6 +1,6 @@
 # sfTwitterBootstrapPlugin
 
-Is an admin theme for symfony1 include an admingenerator theme for propel
+Is an admin theme for symfony1 include an admin generator theme for propel
 
 ## Requirements
 
@@ -58,16 +58,24 @@ all:
     site:  Your project name
 ```
 
+In apps/backend/config/settings.yml
+
+```yaml
+all:
+  .settings:
+    enabled_modules: [default, sfTwitterBootstrap]
+```
+
 Configure the form formatter :
 
-In acpps/backend/config/backendConfiguration.class.php
+In apps/backend/config/backendConfiguration.class.php
 
 ```php
 class backendConfiguration extends sfApplicationConfiguration
 {
   public function configure()
   {
-      sfWidgetFormSchema::setDefaultFormFormatterName('TwitterBootstrap');
+    sfWidgetFormSchema::setDefaultFormFormatterName('TwitterBootstrap');
   }
 }
 ```
