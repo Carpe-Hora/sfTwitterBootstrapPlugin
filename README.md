@@ -2,6 +2,10 @@
 
 Is an admin theme for symfony1 include an admingenerator theme for propel
 
+## Requirements
+
+For a ``Propel`` use, you will have to install [sfPropelORMPlugin](https://github.com/propelorm/sfPropelORMPlugin) instead of sfPropelPlugin.
+
 ## Screenshots
 
 ![Preview of list](https://github.com/real-chocopanda/sfTwitterBootstrapPlugin/raw/master/doc/list.png)
@@ -25,13 +29,13 @@ In apps/backend/config/view.yml
 
 ```yaml
 default:
-  stylesheets:    
+  stylesheets:
     - /sfTwitterBootstrapPlugin/bootstrap/bootstrap.css
     - /sfTwitterBootstrapPlugin/css/style.css
     - /sfTwitterBootstrapPlugin/css/jquery-ui-1.8.16.custom.css # For date pickers ...
     - main.css
-  
-  javascripts:    
+
+  javascripts:
     - "http://code.jquery.com/jquery-1.5.2.min.js"
     - "http://autobahn.tablesorter.com/jquery.tablesorter.min.js"
     - "/sfTwitterBootstrapPlugin/js/google-code-prettify/prettify.js"
@@ -41,8 +45,8 @@ default:
     - "/sfTwitterBootstrapPlugin/js/application.js"
     - "/sfTwitterBootstrapPlugin/bootstrap/js/bootstrap-dropdown.js"
     - "/sfTwitterBootstrapPlugin/js/jquery-ui-1.8.16.custom.min.js" # For date pickers ...
-  
-  
+
+
   layout:         %SF_PLUGINS_DIR%/sfTwitterBootstrapPlugin/templates/layout
 ```
 
