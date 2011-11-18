@@ -2,6 +2,12 @@
 
 Is an admin theme for symfony2 include an admingenerator theme for propel
 
+## Screenshots
+
+![Preview of list](https://github.com/real-chocopanda/sfTwitterBootstrapPlugin/raw/master/doc/list.png)
+
+![Preview of login](https://github.com/real-chocopanda/sfTwitterBootstrapPlugin/raw/master/doc/login.png)
+
 ## How to setup
 
 In config/ProjectConfiguration.class.php
