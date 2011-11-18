@@ -42,7 +42,7 @@ abstract class sfTwitterModelGeneratorHelper extends sfModelGeneratorHelper
 
   public function linkToList($params)
   {
-    return '<li class="back pll mll">'.link_to(__($params['label'], array(), 'sf_admin'), '@'.$this->getUrlForAction('list')).'</li>';
+    return '<li class="pll mll">'.link_to(__($params['label'], array(), 'sf_admin'), '@'.$this->getUrlForAction('list'), array('class' => 'btn')).'</li>';
   }
 
   public function linkToSave($object, $params)

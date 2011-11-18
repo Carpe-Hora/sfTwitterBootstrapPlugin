@@ -6,7 +6,7 @@
 [?php endif; ?]
 <?php endif; ?>
 <div class="sf_admin_list">
-     <table class="sortTable zebra-striped mbn">
+     <table class="sortTable bordered-table zebra-striped mbn">
       <thead>
         <tr>
 <?php if ($this->configuration->getValue('list.batch_actions')): ?>
@@ -26,7 +26,6 @@
   [?php if (!$pager->getNbResults()): ?]
     <tr><td colspan="<?php echo ($this->configuration->getValue('list.batch_actions') ? 1 : 0) + count($this->configuration->getValue('list.display')) + ($this->configuration->getValue('list.object_actions') || $this->configuration->hasFilterForm() ? 1 : 0) ?>">[?php echo __('No result', array(), 'sf_admin') ?]</td></tr>
   [?php else: ?]
-
 
         [?php foreach ($pager->getResults() as $i => $<?php echo $this->getSingularName() ?>): $odd = fmod(++$i, 2) ? 'odd' : 'even' ?]
           <tr class="sf_admin_row [?php echo $odd ?]">
