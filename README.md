@@ -1,5 +1,7 @@
 # sfTwitterBootstrapPlugin
 
+Is an admin theme for symfony2 include an admingenerator theme for propel
+
 ## How to setup
 
 In config/ProjectConfiguration.class.php
