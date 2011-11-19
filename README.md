@@ -1,6 +1,6 @@
 # sfTwitterBootstrapPlugin
 
-Is an admin theme for symfony1 include an admin generator theme for propel
+Is an admin theme for symfony1 include an admin generator theme for Propel and Doctrine.
 
 ## Requirements
 
@@ -9,6 +9,8 @@ For a ``Propel`` use, you will have to install [sfPropelORMPlugin](https://githu
 ## Screenshots
 
 ![Preview of list](https://github.com/real-chocopanda/sfTwitterBootstrapPlugin/raw/master/doc/list.png)
+
+![Preview of list](https://github.com/j0k3r/sfTwitterBootstrapPlugin/raw/master/doc/edit.png)
 
 ![Preview of login](https://github.com/real-chocopanda/sfTwitterBootstrapPlugin/raw/master/doc/login.png)
 
@@ -106,11 +108,11 @@ $formatterObj = $this->widgetSchema->getFormFormatter();
 $formatterObj->setValidatorSchema($this->getValidatorSchema());
 ```
 
-Of course, if you are using an admingenerator it's automatic !!
+Of course, if you are using an admin generator it's automatic !!
 
 ## sfGuard signin form
 
-Overwrite the signinSuccess into apps/backend/modules/sfGuardAuth/templates/signinSuccess.php
+Overwrite the signinSuccess into ``apps/backend/modules/sfGuardAuth/templates/signinSuccess.php``
 
 ``` php
 <div class="mod login">
@@ -132,7 +134,7 @@ Overwrite the signinSuccess into apps/backend/modules/sfGuardAuth/templates/sign
                         <input type="submit" class="btn primary" value="sign in" />
                     </div>
                 </fieldset>
-                </form>
+            </form>
         </div>
     </div>
 </div>

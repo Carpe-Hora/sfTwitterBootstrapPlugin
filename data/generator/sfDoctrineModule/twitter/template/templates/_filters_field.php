@@ -6,6 +6,6 @@
 [?php echo $form[$name]->renderError() ?]
 [?php echo $form[$name]->render($attributes instanceof sfOutputEscaper ? $attributes->getRawValue() : $attributes) ?]
 [?php if ($help || $help = $form[$name]->renderHelp()): ?]
-     <div class="help">[?php echo __($help, array(), '<?php echo $this->getI18nCatalogue() ?>') ?]</div>
+     <span class="help-block">[?php echo __($help, array(), '<?php echo $this->getI18nCatalogue() ?>') ?]</span>
 [?php endif; ?]
 [?php endif; ?]

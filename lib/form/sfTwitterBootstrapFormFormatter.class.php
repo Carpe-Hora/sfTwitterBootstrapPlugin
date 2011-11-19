@@ -6,12 +6,12 @@
 class sfWidgetFormSchemaFormatterTwitterBootstrap extends sfWidgetFormSchemaFormatter
 {
     protected
-    $rowFormat       = "%error%%label%\n  <div class=\"input\">%field%%help%\n%hidden_fields%</div>\n",
-    $errorRowFormat  = "<div class=\"alert-message error\">\n%errors%</div>\n",
-    $errorListFormatInARow     = "  <div class=\"alert-message error\">\n%errors% </div>\n",
-    $errorRowFormatInARow      = "    <p>%error%</p>\n",
-    $helpFormat      = '<span class="help-block">%help%</span>',
-    $decoratorFormat = "<ul class=\"man\">\n  %content%</ul>";
+    $rowFormat              = "%error%%label%\n  <div class=\"input\">%field%%help%\n%hidden_fields%</div>\n",
+    $errorRowFormat         = "%errors%", // "<div class=\"alert-message error\">\n%errors%</div>\n",
+    $errorListFormatInARow  = "%errors%", // "  <div class=\"alert-message error\">\n%errors% </div>\n",
+    $errorRowFormatInARow   = "<span class=\"help-inline\">%error%</span>", // "    <p>%error%</p>\n",
+    $helpFormat             = '<span class="help-block">%help%</span>',
+    $decoratorFormat        = "<ul class=\"man\">\n  %content%</ul>";
 
     protected $validatorSchema;
 
