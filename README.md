@@ -1,6 +1,8 @@
 # sfTwitterBootstrapPlugin
 
-Is an admin theme for symfony1 include an admin generator theme for Propel and Doctrine.
+This symfony1 plugin provides a dashboard/menu and a theme for the admin generator for your backend. It is based on the [Twitter Bootstrap](http://twitter.github.com/bootstrap/).
+It works with Propel or Doctrine.
+The generated dashboard/menu is based on the great [sfAdminDashPlugin](https://github.com/kbond/sfAdminDashPlugin) plugin.
 
 ## Requirements
 
@@ -139,3 +141,8 @@ Overwrite the signinSuccess into ``apps/backend/modules/sfGuardAuth/templates/si
     </div>
 </div>
 ```
+
+## Setup the menu and the dashboard
+
+You can follow ``Step 3`` to  ``Step 5`` from the [readme file of sfAdminDashPlugin](https://github.com/kbond/sfAdminDashPlugin/blob/master/README.md) to setup dashboard / menu items.
+We use different icons in comparison to sfAdminDash. Check the folder ``images``.
