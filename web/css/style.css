@@ -90,8 +90,9 @@ fieldset legend {
   padding: 0 10px;
 }
 
-.loginFieldset { border:none;}
-.loginFieldset legend { padding: 10px 10px 0 10px;}
+.loginFieldset { border:none; }
+.loginFieldset legend { padding: 10px 10px 0 10px; }
+.loginFieldset div.error .help-block { margin-left: 150px; }
 
 .pagination {
   margin: 0;

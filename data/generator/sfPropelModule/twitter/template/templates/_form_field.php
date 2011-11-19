@@ -9,8 +9,8 @@
       [?php echo $form[$name]->renderLabel($label) ?]
 
       <div class="input">
-        [?php echo $form[$name]->render($attributes instanceof sfOutputEscaper ? $attributes->getRawValue() : $attributes) ?]
         [?php echo $form[$name]->renderError() ?]
+        [?php echo $form[$name]->render($attributes instanceof sfOutputEscaper ? $attributes->getRawValue() : $attributes) ?]
 
         [?php if ($help): ?]
           <span class="help-block">[?php echo __($help, array(), '<?php echo $this->getI18nCatalogue() ?>') ?]</span>

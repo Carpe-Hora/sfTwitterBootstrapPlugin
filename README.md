@@ -1,19 +1,19 @@
 # sfTwitterBootstrapPlugin
 
-This symfony1 plugin provides a dashboard/menu and a theme for the admin generator for your backend. It is based on the [Twitter Bootstrap](http://twitter.github.com/bootstrap/).  
-It works with Propel or Doctrine.  
+This symfony1 plugin provides a dashboard/menu and a theme for the admin generator for your backend. It is based on the [Twitter Bootstrap](http://twitter.github.com/bootstrap/).
+It works with Propel or Doctrine.
 The generated dashboard/menu is based on the great [sfAdminDashPlugin](https://github.com/kbond/sfAdminDashPlugin).
 
 ## Requirements
 
-For a ``Propel`` use, you will have to install [sfPropelORMPlugin](https://github.com/propelorm/sfPropelORMPlugin) instead of sfPropelPlugin.  
+For a ``Propel`` use, you will have to install [sfPropelORMPlugin](https://github.com/propelorm/sfPropelORMPlugin) instead of sfPropelPlugin.
 You might need [sfGuardPlugin](http://www.symfony-project.org/plugins/sfGuardPlugin) (or [sfDoctrineGuardPlugin](http://www.symfony-project.org/plugins/sfDoctrineGuardPlugin)) for the user management.
 
 ## Screenshots
 
 ![Preview of list](https://github.com/real-chocopanda/sfTwitterBootstrapPlugin/raw/master/doc/list.png)
 
-![Preview of list](https://github.com/j0k3r/sfTwitterBootstrapPlugin/raw/master/doc/edit.png)
+![Preview of list](https://github.com/real-chocopanda/sfTwitterBootstrapPlugin/raw/master/doc/edit.png)
 
 ![Preview of login](https://github.com/real-chocopanda/sfTwitterBootstrapPlugin/raw/master/doc/login.png)
 
@@ -91,7 +91,7 @@ Change the theme value to :
 
 ```yaml
 generator:
-  class: sfPropelGenerator
+  ...
   param:
     ...
     theme:                 twitter
