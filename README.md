@@ -1,12 +1,12 @@
 # sfTwitterBootstrapPlugin
 
-This symfony1 plugin provides a dashboard/menu and a theme for the admin generator for your backend. It is based on the [Twitter Bootstrap](http://twitter.github.com/bootstrap/).
-It works with Propel or Doctrine.
-The generated dashboard/menu is based on the great [sfAdminDashPlugin](https://github.com/kbond/sfAdminDashPlugin) plugin.
+This symfony1 plugin provides a dashboard/menu and a theme for the admin generator for your backend. It is based on the [Twitter Bootstrap](http://twitter.github.com/bootstrap/).  
+It works with Propel or Doctrine.  
+The generated dashboard/menu is based on the great [sfAdminDashPlugin](https://github.com/kbond/sfAdminDashPlugin).
 
 ## Requirements
 
-For a ``Propel`` use, you will have to install [sfPropelORMPlugin](https://github.com/propelorm/sfPropelORMPlugin) instead of sfPropelPlugin.
+For a ``Propel`` use, you will have to install [sfPropelORMPlugin](https://github.com/propelorm/sfPropelORMPlugin) instead of sfPropelPlugin.  
 You might need [sfGuardPlugin](http://www.symfony-project.org/plugins/sfGuardPlugin) (or [sfDoctrineGuardPlugin](http://www.symfony-project.org/plugins/sfDoctrineGuardPlugin)) for the user management.
 
 ## Screenshots
@@ -19,7 +19,7 @@ You might need [sfGuardPlugin](http://www.symfony-project.org/plugins/sfGuardPlu
 
 ## How to setup
 
-In config/ProjectConfiguration.class.php
+In ``config/ProjectConfiguration.class.php``
 
 ```php
 class ProjectConfiguration extends sfProjectConfiguration
@@ -30,7 +30,7 @@ class ProjectConfiguration extends sfProjectConfiguration
     ...
 ```
 
-In apps/backend/config/view.yml
+In ``apps/backend/config/view.yml``
 
 ```yaml
 default:
@@ -55,7 +55,7 @@ default:
   layout:         %SF_PLUGINS_DIR%/sfTwitterBootstrapPlugin/templates/layout
 ```
 
-In apps/backend/config/app.yml
+In ``apps/backend/config/app.yml``
 
 ```yaml
 all:
@@ -63,7 +63,7 @@ all:
     site:  Your project name
 ```
 
-In apps/backend/config/settings.yml
+In ``apps/backend/config/settings.yml``
 
 ```yaml
 all:
@@ -73,7 +73,7 @@ all:
 
 Configure the form formatter :
 
-In apps/backend/config/backendConfiguration.class.php
+In ``apps/backend/config/backendConfiguration.class.php``
 
 ```php
 class backendConfiguration extends sfApplicationConfiguration
@@ -89,13 +89,18 @@ class backendConfiguration extends sfApplicationConfiguration
 
 Change the theme value to :
 
-```php
-theme:                 twitter
+```yaml
+generator:
+  class: sfPropelGenerator
+  param:
+    ...
+    theme:                 twitter
+    ...
 ```
 
 ## Include a slot in all your screens :
 
-Edit view.yml
+Edit ``view.yml``
 
 ```yaml
 default:
@@ -145,5 +150,5 @@ Overwrite the signinSuccess into ``apps/backend/modules/sfGuardAuth/templates/si
 
 ## Setup the menu and the dashboard
 
-You can follow ``Step 3`` to  ``Step 5`` from the [readme file of sfAdminDashPlugin](https://github.com/kbond/sfAdminDashPlugin/blob/master/README.md) to setup dashboard / menu items.
+You can follow _Step 3_ to  _Step 5_ from the [readme file of sfAdminDashPlugin](https://github.com/kbond/sfAdminDashPlugin/blob/master/README.md) to setup dashboard / menu items.
 We use different icons in comparison to sfAdminDash. Check the folder ``images``.
