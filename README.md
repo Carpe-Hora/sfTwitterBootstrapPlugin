@@ -7,6 +7,7 @@ The generated dashboard/menu is based on the great [sfAdminDashPlugin](https://g
 ## Requirements
 
 For a ``Propel`` use, you will have to install [sfPropelORMPlugin](https://github.com/propelorm/sfPropelORMPlugin) instead of sfPropelPlugin.
+You might need [sfGuardPlugin](http://www.symfony-project.org/plugins/sfGuardPlugin) (or [sfDoctrineGuardPlugin](http://www.symfony-project.org/plugins/sfDoctrineGuardPlugin)) for the user management.
 
 ## Screenshots
 

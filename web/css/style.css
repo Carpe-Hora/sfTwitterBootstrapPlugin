@@ -192,7 +192,8 @@ Module
 /* -----------------------------------------
 Top Bar
 ----------------------------------------- */
-.logged { background:url("../images/user_login.png") no-repeat center left; padding:0 20px; }
+.logged { background:url("../images/user_login.png") no-repeat center left; padding: 0 10px 0 20px; }
+p.logout img { height: 20px; vertical-align: -25%; }
 
 /* -----------------------------------------
 Main Content
