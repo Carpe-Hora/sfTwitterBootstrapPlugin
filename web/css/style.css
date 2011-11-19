@@ -72,31 +72,43 @@ Bootstrap surclass
 td input.xlarge { width:97%;}
 
 .zebra-striped tbody .greystock:first-child td {
-    background-color: #E7EBEB;
+  background-color: #E7EBEB;
 }
 
 .input .arrow { vertical-align: 40px; }
 
-form div.clearfix.error { padding: 0px 0px 10px 0px ;}
-
-fieldset { background: #F5F5F5; border:1px solid #D5D8D8; margin-bottom: 0; }
-fieldset legend { 
-    background: none repeat scroll 0 0 #CCCCCC;
-    border-bottom: 1px solid #FFFFFF;
-    color: #333333;
-    font-size: 15px;
-    font-weight: bold;
-    line-height: 2;
-    padding: 0 0 0 5px;
-    width: 99.7%;
-}
-.actions {
-margin-top: 0;
-border-top:0;
+form .clearfix.error > div > label {
+  color: #B94A48;
 }
 
-.loginFieldset { background:none; border:none;}
-.loginFieldset legend { background:none; padding-left: 150px;}
+fieldset {
+  border:1px solid #D5D8D8;
+}
+
+fieldset legend {
+  margin-left: 140px;
+  padding: 0 10px;
+}
+
+.loginFieldset { border:none; }
+.loginFieldset legend { padding: 10px 10px 0 10px; }
+.loginFieldset div.error .help-block { margin-left: 150px; }
+
+.pagination {
+  margin: 0;
+  float: right;
+}
+
+.pagination .next a {
+  border-right:1px solid;
+  border-right-color:#ddd;
+  border-right-color:rgba(0, 0, 0, 0.15);
+  *border-right-color:#ddd;
+}
+
+.pagination .last a {
+  border: 0;
+}
 
 /* -----------------------------------------
 Spacing
@@ -152,16 +164,15 @@ Module
 
 /* mod login skin */
 .login .inner{
-    -moz-box-shadow:0px 0px 4px #928F8F;
-    -webkit-box-shadow:0px 0px 4px #928F8F;
-    box-shadow:0px 0px 4px #928F8F;
-    /*IE 7 AND 8 DO NOT SUPPORT BLUR PROPERTY OF SHADOWS*/
-    -webkit-border-radius: 5px;
-    -moz-border-radius: 5px;
-    border-radius: 5px;
-    width:500px;
-    margin:0 auto; 
-
+  -moz-box-shadow:0px 0px 4px #928F8F;
+  -webkit-box-shadow:0px 0px 4px #928F8F;
+  box-shadow:0px 0px 4px #928F8F;
+  /*IE 7 AND 8 DO NOT SUPPORT BLUR PROPERTY OF SHADOWS*/
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+  width:500px;
+  margin:0 auto;
 }
 
 .login form, .login fieldset, .login .actions { margin-bottom:0px; }
@@ -182,7 +193,8 @@ Module
 /* -----------------------------------------
 Top Bar
 ----------------------------------------- */
-.logged { background:url("../images/user_login.png") no-repeat center left; padding:0 20px; }
+.logged { background:url("../images/user_login.png") no-repeat center left; padding: 0 10px 0 20px; }
+p.logout img { height: 20px; vertical-align: -25%; }
 
 /* -----------------------------------------
 Main Content

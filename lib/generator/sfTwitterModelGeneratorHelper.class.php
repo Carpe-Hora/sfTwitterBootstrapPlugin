@@ -12,7 +12,7 @@ abstract class sfTwitterModelGeneratorHelper extends sfModelGeneratorHelper
 {
   public function linkToNew($params)
   {
-    return '<button class="btn success" onclick="document.location=\''.url_for('@'.$this->getUrlForAction('new')).'\'">'.__($params['label'], array(), 'sf_admin').'</button>';
+    return '<a class="btn success" href="'.url_for('@'.$this->getUrlForAction('new')).'">'.__($params['label'], array(), 'sf_admin').'</a>';
   }
 
   public function linkToEdit($object, $params)
@@ -31,7 +31,7 @@ abstract class sfTwitterModelGeneratorHelper extends sfModelGeneratorHelper
   }
 
   public function linkToDeleteBtn($object, $params)
-{
+  {
     if ($object->isNew())
     {
       return '';
@@ -42,7 +42,7 @@ abstract class sfTwitterModelGeneratorHelper extends sfModelGeneratorHelper
 
   public function linkToList($params)
   {
-    return '<li class="back pll mll">'.link_to(__($params['label'], array(), 'sf_admin'), '@'.$this->getUrlForAction('list')).'</li>';
+    return '<li>'.link_to(__($params['label'], array(), 'sf_admin'), '@'.$this->getUrlForAction('list'), array('class' => 'btn mlm')).'</li>';
   }
 
   public function linkToSave($object, $params)
