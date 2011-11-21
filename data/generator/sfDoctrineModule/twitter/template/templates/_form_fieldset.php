@@ -7,7 +7,10 @@
     [?php if ((isset($form[$name]) && $form[$name]->isHidden()) || (!isset($form[$name]) && $field->isReal())) continue ?]
     [?php include_partial('<?php echo $this->getModuleName() ?>/form_field', array(
       'name'       => $name,
-      'attributes' => $field->getConfig('attributes', array()),
+      'attributes' => $field->getConfig(
+        'attributes',
+        array('class' => sfTwitterBootstrap::guessLengthFromType($field->getType()))
+      ),
       'label'      => $field->getConfig('label'),
       'help'       => $field->getConfig('help'),
       'form'       => $form,
