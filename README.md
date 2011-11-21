@@ -104,7 +104,8 @@ Edit ``view.yml``
 
 ```yaml
 default:
-  sf_twitter_bootstrap_permanent_slot: [ Module, component ]
+  components:
+    sf_twitter_bootstrap_permanent_slot: [ Module, component ]
 ```
 
 ## Highlight required label
