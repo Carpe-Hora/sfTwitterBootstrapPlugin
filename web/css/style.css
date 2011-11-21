@@ -57,6 +57,7 @@ Bootstrap surclass
 
 .primary-color { color:#049CDB;}
 
+body > div.container-fluid { padding-bottom: 20px; }
 .container-fluid > .content { margin-left: 328px; }
 .container-fluid > .sidebar { float: left; width: 319px; }
 
@@ -69,8 +70,6 @@ Bootstrap surclass
 
 .close { line-height: 18.5px; }
 
-td input.xlarge { width:97%;}
-
 .zebra-striped tbody .greystock:first-child td {
   background-color: #E7EBEB;
 }
@@ -79,6 +78,10 @@ td input.xlarge { width:97%;}
 
 form .clearfix.error > div > label {
   color: #B94A48;
+}
+
+input[type="checkbox"] {
+  margin-top: 9px;
 }
 
 fieldset {
@@ -108,6 +111,11 @@ fieldset legend {
 
 .pagination .last a {
   border: 0;
+}
+
+.dropdown-menu img {
+  vertical-align: middle;
+  padding-bottom: 4px;
 }
 
 /* -----------------------------------------
@@ -205,7 +213,7 @@ Main Content
 .smad ul li { display:inline-block;}
 .smad .pic img { vertical-align: -2px;}
 
-.table-result { font-weight:bold; padding:5px;}
+.table-result { font-weight:bold; padding:5px; line-height: 36px;}
 
 .icon-list li { -moz-transition: all 0.3s linear 0s; }
 .icon-list li:hover { background-color:#DDD; border-radius:20px; }

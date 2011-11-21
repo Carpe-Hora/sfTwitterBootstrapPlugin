@@ -24,7 +24,6 @@
       <?php echo $sf_content ?>
     </div>
 
-
     <script>$(function () { prettyPrint() })</script>
 
   </body>
