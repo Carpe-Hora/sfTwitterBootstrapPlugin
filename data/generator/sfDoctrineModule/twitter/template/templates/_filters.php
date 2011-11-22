@@ -17,7 +17,6 @@
                 'help'       => $filterFields['<?php echo $name ?>']->getConfig('help'),
                 'form'       => $filters,
                 'field'      => $filterFields['<?php echo $name ?>'],
-                //'class'      => 'large sf_admin_'.strtolower($filterFields['<?php echo $name ?>']->getType()).' sf_admin_filter_field_<?php echo $name ?>',
               )) ?]
        [?php endif; ?]
     </td>

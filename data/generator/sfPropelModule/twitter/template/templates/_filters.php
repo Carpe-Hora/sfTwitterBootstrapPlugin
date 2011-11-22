@@ -9,12 +9,14 @@
         [?php if(isset($filters['<?php echo $name ?>']) && isset($filterFields['<?php echo $name ?>'])/* && $filterFields['<?php echo $name ?>']->isReal() && !$filters['<?php echo $name ?>']->isHidden()*/): ?]
             [?php include_partial('<?php echo $this->getModuleName() ?>/filters_field', array(
                 'name'       => '<?php echo $name ?>',
-                'attributes' => $filterFields['<?php echo $name ?>']->getConfig('attributes', array('class' => 'xlarge')),
+                'attributes' => $filterFields['<?php echo $name ?>']->getConfig(
+                  'attributes',
+                  array('class' => sfTwitterBootstrap::guessLengthFromType($filterFields['<?php echo $name ?>']->getType()))
+                ),
                 'label'      => $filterFields['<?php echo $name ?>']->getConfig('label'),
                 'help'       => $filterFields['<?php echo $name ?>']->getConfig('help'),
                 'form'       => $filters,
                 'field'      => $filterFields['<?php echo $name ?>'],
-                'class'      => 'xlarge sf_admin_'.strtolower($filterFields['<?php echo $name ?>']->getType()).' sf_admin_filter_field_<?php echo $name ?>',
               )) ?]
        [?php endif; ?]
     </td>
