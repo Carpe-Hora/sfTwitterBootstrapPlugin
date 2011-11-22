@@ -23,14 +23,14 @@ use_helper('I18N');
     </div>
 </div>
 
-<?php if (sfTwitterBootstrap::getProperty('include_path')): ?>
+<?php if ($sf_user->isAuthenticated() && sfTwitterBootstrap::getProperty('include_path')): ?>
 <ul class='breadcrumb mbs'>
   <li>
     <?php echo link_to('Home', sfTwitterBootstrap::getProperty('dashboard_url')) ?>
   </li>
-  <?php if ($sf_context->getModuleName() != 'sfAdminDash' && $sf_context->getActionName() != 'dashboard'): ?>
+  <?php if ($sf_context->getModuleName() != 'sfTwitterBootstrap' && $sf_context->getActionName() != 'dashboard'): ?>
     <li><span class="divider">/</span>
-    <?php echo null !== $module_link ? link_to($module_link_name, $module_link) : $module_link_name; ?>
+    <?php echo null !== $module_link ? link_to($module_link_name, $module_link) : ucfirst($module_link_name); ?>
     <?php if (null != $action_link): ?><span class="divider">/</span>
        <?php echo link_to(__(ucfirst($action_link_name)), $action_link); ?>
     <?php endif ?></li>

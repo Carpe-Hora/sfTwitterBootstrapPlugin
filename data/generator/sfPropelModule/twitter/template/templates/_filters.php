@@ -6,7 +6,7 @@
     <?php endif; ?>
     <?php foreach ($this->configuration->getValue('list.display') as $name => $field): ?>
     <td>
-        [?php if(isset($filters['<?php echo $name ?>'])/* && $filterFields['<?php echo $name ?>']->isReal() && !$filters['<?php echo $name ?>']->isHidden()*/): ?]
+        [?php if(isset($filters['<?php echo $name ?>']) && isset($filterFields['<?php echo $name ?>'])/* && $filterFields['<?php echo $name ?>']->isReal() && !$filters['<?php echo $name ?>']->isHidden()*/): ?]
             [?php include_partial('<?php echo $this->getModuleName() ?>/filters_field', array(
                 'name'       => '<?php echo $name ?>',
                 'attributes' => $filterFields['<?php echo $name ?>']->getConfig('attributes', array('class' => 'xlarge')),
@@ -21,8 +21,8 @@
     <?php endforeach; ?>
     <td>
         [?php echo $filters->renderHiddenFields() ?]
-        [?php echo link_to(__('Reset', array(), 'sf_admin'), '<?php echo $this->getUrlForAction('collection') ?>', array('action' => 'filter'), array('class' => 'btn', 'query_string' => '_reset', 'method' => 'post')) ?]
         <input type="submit" class="btn info" value="[?php echo __('Filter', array(), 'sf_admin') ?]" />
+        [?php echo link_to(__('Reset', array(), 'sf_admin'), '<?php echo $this->getUrlForAction('collection') ?>', array('action' => 'filter'), array('class' => 'btn', 'query_string' => '_reset', 'method' => 'post')) ?]
     </td>
 </tr>
 </form>

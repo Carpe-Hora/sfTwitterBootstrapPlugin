@@ -10,11 +10,11 @@
     <?php if (sfTwitterBootstrap::hasItemsMenu($items)): ?>
     <li class="dropdown" data-dropdown="dropdown"><a href="#" class="dropdown-toggle" >Menu</a>
       <ul class="dropdown-menu">
-        <?php include_partial('sfAdminDash/menu_list', array('items' => $items, 'items_in_menu' => true)); ?>
+        <?php include_partial('sfTwitterBootstrap/menu_list', array('items' => $items, 'items_in_menu' => true)); ?>
       </ul>
     </li>
     <?php  endif; ?>
-    <?php include_partial('sfAdminDash/menu_list', array('items' => $items, 'items_in_menu' => false)); ?>
+    <?php include_partial('sfTwitterBootstrap/menu_list', array('items' => $items, 'items_in_menu' => false)); ?>
   </ul>
 <?php endif; ?>
 <?php if (count($categories)): ?>

@@ -16,7 +16,7 @@ class sfTwitterBootstrap
   }
 
   /**
-   * Return the user actions from the sf_admin_dash configuration
+   * Return the user actions from the sf_twitter_bootstrap configuration
    *
    * @return array
    */
@@ -47,9 +47,8 @@ class sfTwitterBootstrap
     return false;
   }
 
-
   /**
-   * Return the items from the sf_admin_dash configuration
+   * Return the items from the sf_twitter_bootstrap configuration
    *
    * @return array
    *
@@ -63,7 +62,6 @@ class sfTwitterBootstrap
 
     return $items;
   }
-
 
   /**
    * Return all items from the configuration, conbining the one from the plain items array and the categories
@@ -110,7 +108,6 @@ class sfTwitterBootstrap
     return $categories;
   }
 
-
   /**
    * A proxy method for sfConfig::get(), used bacause it's more readible this way
    *
@@ -124,7 +121,6 @@ class sfTwitterBootstrap
     return sfConfig::get('app_sf_twitter_bootstrap_'.$name, $default);
   }
 
-
   /**
    * A proxy method for sfConfig::set(), userd because it's more convenient
    *
@@ -135,7 +131,6 @@ class sfTwitterBootstrap
   {
     sfConfig::set('app_sf_twitter_bootstrap_'.$name, $value);
   }
-
 
   /**
    * Check if the user the necessary credentials to see this particular item
@@ -152,7 +147,6 @@ class sfTwitterBootstrap
 
     return isset($item['credentials']) ? $user->hasCredential($item['credentials']) : true;
   }
-
 
   /**
    * Check if the supplied route exists
@@ -175,9 +169,8 @@ class sfTwitterBootstrap
     }
   }
 
-
   /**
-   * Get the current module name (as defined in the sfAdminDash configuration), if possible, with translation
+   * Get the current module name (as defined in the sfTwitterBootstrap configuration), if possible, with translation
    * If no specific name was found for the module name, it is returned as is
    *
    * @param sfContext $context
@@ -219,9 +212,8 @@ class sfTwitterBootstrap
     return $modulename;
   }
 
-
   /**
-   * Get the current action name, with translatio, if possible
+   * Get the current action name, with translation, if possible
    *
    * @param sfContext $context
    *
@@ -235,7 +227,6 @@ class sfTwitterBootstrap
 
     return isset($translation[$modulename]["actions"][$actionname]) ? $translation[$modulename]["actions"][$actionname] : $actionname;
   }
-
 
   /**
    * This function primes the item for use, making sure all required fields are set
@@ -258,5 +249,26 @@ class sfTwitterBootstrap
 
     //if in_menu isn't specified - use true
     $item['in_menu'] = isset($item['in_menu']) ? $item['in_menu'] : true;
+  }
+
+  public static function guessLengthFromType($type)
+  {
+    switch($type)
+    {
+      case 'Date':
+        return 'mini';
+        break;
+
+      case 'Boolean': // boolean is here because of the "yes or no" in the filter form
+      case 'Number':
+        return 'small';
+        break;
+
+      case 'Text': // input and textarea are in the same boat ...
+      case 'ForeignKey':
+      default:
+        return 'large';
+        break;
+    }
   }
 }
