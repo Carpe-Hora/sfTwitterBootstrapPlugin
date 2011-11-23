@@ -15,7 +15,7 @@
           </div>
 
           <div class="actions">
-            <input type="submit" class="btn primary" value="sign in" />
+            <input type="submit" class="btn primary" value="<?php echo __('sign in') ?>" />
           </div>
         </fieldset>
       </form>
