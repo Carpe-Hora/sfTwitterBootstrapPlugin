@@ -14,7 +14,7 @@
     <div class="mod dash">
         <div class="inner">
           <div class="hd">
-              <h3 class="plm"><?php echo __(isset($category['name']) ? $category['name'] : $name, null, 'sf_admin_dash'); ?></h3>
+              <h3 class="plm"><?php echo __(isset($category['name']) ? $category['name'] : $name); ?></h3>
          </div>
          <?php include_partial('dash_list', array('items' => $category['items'])); ?>
        </div>
