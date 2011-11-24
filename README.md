@@ -11,9 +11,15 @@ You might need [sfGuardPlugin](http://www.symfony-project.org/plugins/sfGuardPlu
 
 ## Screenshots
 
+Preview of list:
+
 ![Preview of list](https://github.com/real-chocopanda/sfTwitterBootstrapPlugin/raw/master/doc/list.png)
 
-![Preview of list](https://github.com/real-chocopanda/sfTwitterBootstrapPlugin/raw/master/doc/edit.png)
+Preview of edit:
+
+![Preview of edit](https://github.com/real-chocopanda/sfTwitterBootstrapPlugin/raw/master/doc/edit.png)
+
+Preview of login:
 
 ![Preview of login](https://github.com/real-chocopanda/sfTwitterBootstrapPlugin/raw/master/doc/login.png)
 
@@ -60,7 +66,9 @@ In ``apps/backend/config/app.yml``
 ```yaml
 all:
   sf_twitter_bootstrap:
-    site:  Your project name
+    site:                   Your project name
+    # if you want top links to fieldset legend in new/edit page (like "Admin & Content" in the edit screenshot)
+    top_link_to_fieldset:   true
 ```
 
 In ``apps/backend/config/settings.yml``
