@@ -9,7 +9,7 @@
       [?php foreach ($configuration->getFormFields($form, $form->isNew() ? 'new' : 'edit') as $fieldset => $fields): ?]
         [?php if ('NONE' != $fieldset): ?]
           [?php $fieldset_name = __($fieldset, array(), '<?php echo $this->getI18nCatalogue() ?>') ?]
-            <small>- <a class="link-to-fieldset" href="#[?php echo preg_replace('/[^a-z0-9_]/', '_', strtolower($fieldset_name)) ?]">[?php echo $fieldset_name ?]</a></small>
+            <small>- <a class="link-to-fieldset" href="#[?php echo preg_replace('/[^a-z0-9_]/', '_', strtolower($fieldset)) ?]">[?php echo $fieldset_name ?]</a></small>
         [?php endif; ?]
       [?php endforeach; ?]
     [?php endif; ?]
