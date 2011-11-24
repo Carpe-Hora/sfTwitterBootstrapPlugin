@@ -2,7 +2,6 @@ $(document).ready(function(){
 
   $('.topbar').dropdown();
 
-
   // table sort example
   // ==================
 
@@ -35,6 +34,12 @@ $(document).ready(function(){
         .twipsy('show')
       })
   })
+
+  $('a.link-to-fieldset').click(function() {
+    field = $(this).attr('href').substr(1, $(this).attr('href').length);
+    $(window).scrollTop($('#sf_fieldset_'+field).position().top + 30);
+    return false;
+  })
 });
 
 /**
@@ -43,7 +48,8 @@ $(document).ready(function(){
  */
 function copyIds()
 {
-    $('.sf_admin_batch_checkbox:checked').each(function() {
-        $('#batch_checked_ids').append('<option value="'+$(this).val()+'" selected="selected">'+$(this).val()+'</option>');
-    });
+  $('.sf_admin_batch_checkbox:checked').each(function() {
+    $('#batch_checked_ids').append('<option value="'+$(this).val()+'" selected="selected">'+$(this).val()+'</option>');
+  });
 }
+

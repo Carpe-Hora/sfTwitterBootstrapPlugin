@@ -6,7 +6,7 @@
     <?php else: ?>
 
       <?php
-        $params['params'] = array_merge($params['params'], array('class' => 'btn'));
+        $params['params'] = is_array($params['params']) ? array_merge($params['params'], array('class' => 'btn')) : array('class' => 'btn') ;
         echo $this->addCredentialCondition($this->getLinkToAction($name, $params, false), $params)."\n"
       ?>
 
