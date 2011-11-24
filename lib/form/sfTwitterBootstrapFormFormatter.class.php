@@ -39,7 +39,7 @@ class sfWidgetFormSchemaFormatterTwitterBootstrap extends sfWidgetFormSchemaForm
 
         if ($this->validatorSchema) {
             $fields = $this->validatorSchema->getFields();
-            if($fields[$name] != null) {
+            if(isset($fields[$name]) && $fields[$name] != null) {
                 $field = $fields[$name];
                 if($field->hasOption('required') && $field->getOption('required')) {
                     $attributes['class'] = isset($attributes['class']) ? $attributes['class'] : '';
