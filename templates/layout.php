@@ -5,8 +5,6 @@
     <?php include_http_metas() ?>
     <?php include_metas() ?>
     <?php include_javascripts() ?>
-    <!-- fallback -->
-    <script>window.jQuery || document.write('<script src="<?php javascript_path('/sfTwitterBootstrapPlugin/js/jquery-1.7.min.js')?>">\x3C/script>')</script>
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
     <!--[if lt IE 9]>
