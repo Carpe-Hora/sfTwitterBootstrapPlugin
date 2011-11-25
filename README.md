@@ -47,7 +47,7 @@ default:
     - main.css
 
   javascripts:
-    - "http://code.jquery.com/jquery-1.5.2.min.js"
+    - "http://code.jquery.com/jquery-1.7.min.js"
     - "http://autobahn.tablesorter.com/jquery.tablesorter.min.js"
     - "/sfTwitterBootstrapPlugin/js/google-code-prettify/prettify.js"
     - "/sfTwitterBootstrapPlugin/bootstrap/js/bootstrap-dropdown.js"
