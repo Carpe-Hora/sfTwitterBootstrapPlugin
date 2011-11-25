@@ -48,7 +48,7 @@ default:
 
   javascripts:
     - "http://code.jquery.com/jquery-1.7.min.js"
-    - "http://autobahn.tablesorter.com/jquery.tablesorter.min.js"
+    - "/sfTwitterBootstrapPlugin/js/jquery.tablesorter.min.js"
     - "/sfTwitterBootstrapPlugin/js/google-code-prettify/prettify.js"
     - "/sfTwitterBootstrapPlugin/bootstrap/js/bootstrap-dropdown.js"
     - "/sfTwitterBootstrapPlugin/bootstrap/js/bootstrap-twipsy.js"
