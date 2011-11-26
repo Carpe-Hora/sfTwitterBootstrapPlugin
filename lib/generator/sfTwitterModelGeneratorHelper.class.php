@@ -37,7 +37,12 @@ abstract class sfTwitterModelGeneratorHelper extends sfModelGeneratorHelper
       return '';
     }
 
-    return '<li class="btn danger delete">'.link_to(__($params['label'], array(), 'sf_admin'), $this->getUrlForAction('delete'), $object, array('method' => 'delete', 'confirm' => !empty($params['confirm']) ? __($params['confirm'], array(), 'sf_admin') : $params['confirm'])).'</li>';
+    $confirm = '';
+    if (isset($params['confirm'])) {
+      $confirm = $this->generateDeleteConfirm($params['confirm']);
+    }
+
+    return '<li class="delete">'.link_to(__($params['label'], array(), 'sf_admin'), $this->getUrlForAction('delete'), $object, array('class' => 'btn danger delete', 'onclick' => $confirm)).'</li>';
   }
 
   public function linkToList($params)
@@ -58,5 +63,33 @@ abstract class sfTwitterModelGeneratorHelper extends sfModelGeneratorHelper
     }
 
     return '<li><input class="btn success mlm" type="submit" value="'.__($params['label'], array(), 'sf_admin').'" name="_save_and_add" /></li>';
+  }
+
+  protected function generateDeleteConfirm($confirm)
+  {
+    $confirmMsg = __($confirm, array(), 'sf_admin');
+    $confirm = "var self = this; bootbox.confirm('$confirmMsg', function(result) {if (result) {".$this->generateMethodFunction('delete')."}}); return false;";
+    return $confirm;
+  }
+
+  protected function generateMethodFunction($method)
+  {
+    $function = "var f = document.createElement('form'); f.style.display = 'none'; self.parentNode.appendChild(f); f.method = 'post'; f.action = self.href;";
+
+    if ('post' != strtolower($method)) {
+      $function .= "var m = document.createElement('input'); m.setAttribute('type', 'hidden'); ";
+      $function .= sprintf("m.setAttribute('name', 'sf_method'); m.setAttribute('value', '%s'); f.appendChild(m);", strtolower($method));
+    }
+
+    // CSRF protection
+    $form = new BaseForm();
+    if ($form->isCSRFProtected()) {
+      $function .= "var m = document.createElement('input'); m.setAttribute('type', 'hidden'); ";
+      $function .= sprintf("m.setAttribute('name', '%s'); m.setAttribute('value', '%s'); f.appendChild(m);", $form->getCSRFFieldName(), $form->getCSRFToken());
+    }
+
+    $function .= "f.submit();";
+
+    return $function;
   }
 }
