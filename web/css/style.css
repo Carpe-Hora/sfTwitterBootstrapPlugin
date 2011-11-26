@@ -65,8 +65,8 @@ body > div.container-fluid { padding-bottom: 20px; }
 .table .actions a { vertical-align: 6px; }
 .table ul { margin:0px;}
 .table-action li { display:inline-block;}
-.edit { background:url("../images/edit_icon.png") no-repeat top left; padding-left: 20px; }
-.delete { background:url("../images/delete_icon.png") no-repeat top left; padding-left: 20px; }
+.table-action .edit { background:url("../images/edit_icon.png") no-repeat top left; padding-left: 20px; }
+.table-action .delete { background:url("../images/delete_icon.png") no-repeat top left; padding-left: 20px; }
 
 .close { line-height: 18.5px; }
 
