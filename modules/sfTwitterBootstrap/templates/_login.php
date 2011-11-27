@@ -1,3 +1,4 @@
+<?php use_helper('I18N'); ?>
 
 <div class="mod login">
   <div class="inner">
