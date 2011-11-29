@@ -128,6 +128,25 @@ fieldset legend {
   padding-bottom: 4px;
 }
 
+/* sytling radio_list */
+ul.radio_list {margin-left: 0px; padding-top: 6px; }
+
+ul.radio_list li {
+    margin-right: 5px;
+    padding-top: 1px;
+    width: auto;
+    float: left;
+}
+
+ul.radio_list li input { float: left; }
+
+ul.radio_list li label {
+    width: auto;
+    margin-left: 5px;
+    padding-top: 0px;
+    text-align: left;
+}
+
 /* -----------------------------------------
 Spacing
 ----------------------------------------- */
