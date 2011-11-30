@@ -4,6 +4,7 @@
   /** @var Array of categories, each containing an array of menu items and settings */ $categories = $sf_data->getRaw('categories');
 ?>
 <h2 class="mbl">Dashboard</h2>
+<?php include_partial('flashes'); ?>
 <?php if (count($items)): ?>
   <?php include_partial('dash_list', array('items' => $items)); ?>
 <?php endif; ?>
