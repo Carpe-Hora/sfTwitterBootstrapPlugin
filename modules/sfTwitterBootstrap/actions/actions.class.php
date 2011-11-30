@@ -1,15 +1,7 @@
 <?php
 
+include sfConfig::get('sf_plugins_dir') . '/sfTwitterBootstrapPlugin/modules/sfTwitterBootstrap/lib/PluginSfTwitterBootstrapActions.class.php';
 
-class sfTwitterBootstrapActions extends sfActions
+class sfTwitterBootstrapActions extends PluginSfTwitterBootstrapActions
 {
-  /**
-  * Executes the index action, which shows a list of all available modules
-  *
-  */
-  public function executeDashboard()
-  {
-    $this->items = sfTwitterBootstrap::getItems();
-    $this->categories = sfTwitterBootstrap::getCategories();
-  }
 }
