@@ -54,7 +54,7 @@ default:
     - "/sfTwitterBootstrapPlugin/bootstrap/js/bootstrap-twipsy.js"
     - "/sfTwitterBootstrapPlugin/bootstrap/js/bootstrap-scrollspy.js"
     - "/sfTwitterBootstrapPlugin/js/application.js"
-    - "/sfTwitterBootstrapPlugin/bootstrap/js/bootstrap-dropdown.js"
+    - "/sfTwitterBootstrapPlugin/bootstrap/js/bootstrap-modal.js"
     - "/sfTwitterBootstrapPlugin/js/bootbox/bootbox.min.js"
     - "/sfTwitterBootstrapPlugin/js/jquery-ui-1.8.16.custom.min.js" # For date pickers ...
 
