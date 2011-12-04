@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="<?php echo $sf_user->getCulture() ?>">
   <head>
     <?php include_title() ?>
     <?php include_http_metas() ?>
