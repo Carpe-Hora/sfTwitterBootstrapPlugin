@@ -27,7 +27,12 @@ abstract class sfTwitterModelGeneratorHelper extends sfModelGeneratorHelper
       return '';
     }
 
-    return '<li class="delete">'.link_to(__($params['label'], array(), 'sf_admin'), $this->getUrlForAction('delete'), $object, array('method' => 'delete', 'confirm' => !empty($params['confirm']) ? __($params['confirm'], array(), 'sf_admin') : $params['confirm'])).'</li>';
+    $confirm = '';
+    if (isset($params['confirm'])) {
+      $confirm = $this->generateDeleteConfirm($params['confirm']);
+    }
+    
+    return '<li class="delete">'.link_to(__($params['label'], array(), 'sf_admin'), $this->getUrlForAction('delete'), $object, array('method' => 'delete', 'onclick' => $confirm)).'</li>';
   }
 
   public function linkToDeleteBtn($object, $params)
