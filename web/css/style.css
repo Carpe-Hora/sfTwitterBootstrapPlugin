@@ -128,23 +128,33 @@ fieldset legend {
   padding-bottom: 4px;
 }
 
+.modal-filters, .modal-filters.fade.in {
+  position: absolute;
+  top: 60px;
+  margin: 0 0 0 -280px;
+}
+
+.modal-filters form {
+  margin-bottom: 0;
+}
+
 /* sytling radio_list and checkbox_list */
 ul.radio_list, ul.checkbox_list {margin-left: 0px; padding-top: 6px; }
 
 ul.radio_list li, ul.checkbox_list li {
-    margin-right: 5px;
-    padding-top: 1px;
-    width: auto;
-    float: left;
+  margin-right: 5px;
+  padding-top: 1px;
+  width: auto;
+  float: left;
 }
 
 ul.radio_list li input, ul.checkbox_list li input { float: left; margin-top: 3px; }
 
 ul.radio_list li label, ul.checkbox_list li label {
-    width: auto;
-    margin-left: 5px;
-    padding-top: 0px;
-    text-align: left;
+  width: auto;
+  margin-left: 5px;
+  padding-top: 0px;
+  text-align: left;
 }
 
 /* -----------------------------------------
