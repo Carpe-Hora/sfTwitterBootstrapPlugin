@@ -47,7 +47,7 @@ default:
     - main.css
 
   javascripts:
-    - "http://code.jquery.com/jquery-1.7.min.js"
+    - "/sfTwitterBootstrapPlugin/js/jquery-1.7.min.js"
     - "/sfTwitterBootstrapPlugin/js/jquery.tablesorter.min.js"
     - "/sfTwitterBootstrapPlugin/js/google-code-prettify/prettify.js"
     - "/sfTwitterBootstrapPlugin/bootstrap/js/bootstrap-dropdown.js"
@@ -55,7 +55,6 @@ default:
     - "/sfTwitterBootstrapPlugin/bootstrap/js/bootstrap-scrollspy.js"
     - "/sfTwitterBootstrapPlugin/bootstrap/js/bootstrap-modal.js"
     - "/sfTwitterBootstrapPlugin/js/application.js"
-    - "/sfTwitterBootstrapPlugin/bootstrap/js/bootstrap-dropdown.js"
     - "/sfTwitterBootstrapPlugin/js/bootbox/bootbox.min.js"
     - "/sfTwitterBootstrapPlugin/js/jquery-ui-1.8.16.custom.min.js" # For date pickers ...
 
