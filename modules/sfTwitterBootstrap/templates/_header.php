@@ -17,7 +17,7 @@ use_helper('I18N');
         <p class="logout pull-right">
             <?php echo link_to(image_tag('/sfTwitterBootstrapPlugin/images/logout_icon.png'), sfTwitterBootstrap::getProperty('logout_route')) ?>
         </p>
-        <p class="logged pull-right primary-color"><?php echo__('Logged in as') ?> <a href="#"><?php echo $sf_user->__toString(); ?></a></p>
+        <p class="logged pull-right primary-color"><?php echo __('Logged in as') ?> <a href="#"><?php echo $sf_user->__toString(); ?></a></p>
 <?php endif; // if user is authenticated ?>
         </div>
     </div>
