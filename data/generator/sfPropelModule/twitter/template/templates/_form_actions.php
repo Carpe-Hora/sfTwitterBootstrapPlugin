@@ -24,7 +24,10 @@
   <?php echo $this->addCredentialCondition('[?php echo $helper->linkTo'.$method.'($form->getObject(), '.$this->asPhp($params).') ?]', $params) ?>
 
 [?php else: ?]
-  <?php echo $this->addCredentialCondition($this->getLinkToAction($name, $params, true), $params) ?>
+  <?php
+    $params['params'] = is_array($params['params']) ? array_merge($params['params'], array('class' => 'btn')) : array('class' => 'btn') ;
+    echo $this->addCredentialCondition($this->getLinkToAction($name, $params, true), $params)
+  ?>
 
 [?php endif; ?]
   </li>

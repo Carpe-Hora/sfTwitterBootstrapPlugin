@@ -31,7 +31,7 @@ abstract class sfTwitterModelGeneratorHelper extends sfModelGeneratorHelper
     if (isset($params['confirm'])) {
       $confirm = $this->generateDeleteConfirm($params['confirm']);
     }
-    
+
     return '<li class="delete">'.link_to(__($params['label'], array(), 'sf_admin'), $this->getUrlForAction('delete'), $object, array('method' => 'delete', 'onclick' => $confirm)).'</li>';
   }
 
@@ -52,7 +52,7 @@ abstract class sfTwitterModelGeneratorHelper extends sfModelGeneratorHelper
 
   public function linkToList($params)
   {
-    return '<li>'.link_to(__($params['label'], array(), 'sf_admin'), '@'.$this->getUrlForAction('list'), array('class' => 'btn mlm')).'</li>';
+    return '<li>'.link_to(__($params['label'], array(), 'sf_admin'), '@'.$this->getUrlForAction('list'), array('class' => 'btn')).'</li>';
   }
 
   public function linkToSave($object, $params)
