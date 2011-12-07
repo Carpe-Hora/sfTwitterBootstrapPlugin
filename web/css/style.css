@@ -94,6 +94,11 @@ input[type="checkbox"][name*="is_empty"] + label {
   padding-top: 0;
 }
 
+/* styling plain widget (http://trac.symfony-project.org/changeset/29247) */
+div.input div {
+  padding-top: 8px;
+}
+
 fieldset {
   border:1px solid #D5D8D8;
 }
