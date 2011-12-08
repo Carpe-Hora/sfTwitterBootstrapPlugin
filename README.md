@@ -107,6 +107,19 @@ generator:
     ...
 ```
 
+### include partials on the right
+
+```yaml
+generator:
+  ...
+  config:
+    ...
+    edit:
+      ...
+      partial: ['module/partial']
+```
+
+
 ## Include a slot in all your screens :
 
 Edit ``view.yml``

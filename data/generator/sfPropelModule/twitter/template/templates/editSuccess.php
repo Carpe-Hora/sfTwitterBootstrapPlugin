@@ -2,6 +2,16 @@
 [?php include_partial('<?php echo $this->getModuleName() ?>/assets') ?]
 
 <div id="sf_admin_container">
+
+<?php if($this->configuration->hasEditPartial()) : ?>
+  <div class="sf_admin_right_column">
+  <?php foreach($this->configuration->getEditPartial() as $partial): ?>
+    [?php include_partial('<?php echo $partial ?>', array('form' => $form, '<?php echo $this->getSingularName() ?>' => $<?php echo $this->getSingularName() ?>, 'helper' => $helper, 'configuration' => $configuration)) ?]
+  <?php endforeach; ?>
+  </div>
+  <div class="sf_admin_with_right_colum">
+<?php endif; ?>
+
   <h2 class="mbl">
     [?php echo <?php echo $this->getI18NString('edit.title') ?> ?]
 
@@ -28,4 +38,7 @@
   <div id="sf_admin_footer">
     [?php include_partial('<?php echo $this->getModuleName() ?>/form_footer', array('<?php echo $this->getSingularName() ?>' => $<?php echo $this->getSingularName() ?>, 'form' => $form, 'configuration' => $configuration)) ?]
   </div>
+<?php if($this->configuration->hasEditPartial()) : ?>
+  </div>
+<?php endif; ?>
 </div>
