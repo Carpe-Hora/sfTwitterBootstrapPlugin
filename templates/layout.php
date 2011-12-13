@@ -15,7 +15,7 @@
     <?php include_stylesheets() ?>
 
     <!-- Le fav and touch icons -->
-    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="shortcut icon" href="/favicon.ico" />
   </head>
   <body>
     <?php include_component('sfTwitterBootstrap', 'header'); ?>
