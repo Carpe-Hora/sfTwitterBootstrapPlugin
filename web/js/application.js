@@ -43,7 +43,7 @@ $(document).ready(function(){
 });
 
 /**
- * Function to copy ids[] on a batch actions to and hidden fields beacause chackboxes
+ * Function to copy ids[] on a batch actions to and hidden fields because checkboxes
  * can't be into a form
  */
 function copyIds()
