@@ -3,14 +3,6 @@
 
 <div id="sf_admin_container">
 
-<?php if($this->configuration->hasNewPartial()) : ?>
-  <div class="sf_admin_right_column">
-  <?php foreach($this->configuration->getNewPartial() as $partial): ?>
-    [?php include_partial('<?php echo $partial ?>', array('<?php echo $this->getSingularName() ?>' => $<?php echo $this->getSingularName() ?>, 'helper' => $helper, 'configuration' => $configuration)) ?]
-  <?php endforeach; ?>
-  </div>
-  <div class="sf_admin_with_right_colum">
-<?php endif; ?>
   <h2 class="mbl">
     [?php echo <?php echo $this->getI18NString('new.title') ?> ?]
 
@@ -37,7 +29,5 @@
   <div id="sf_admin_footer">
     [?php include_partial('<?php echo $this->getModuleName() ?>/form_footer', array('<?php echo $this->getSingularName() ?>' => $<?php echo $this->getSingularName() ?>, 'form' => $form, 'configuration' => $configuration)) ?]
   </div>
-<?php if($this->configuration->hasNewPartial()) : ?>
-  </div>
-<?php endif; ?>
+
 </div>
