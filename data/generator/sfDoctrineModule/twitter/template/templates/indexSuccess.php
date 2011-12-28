@@ -1,6 +1,15 @@
 [?php use_helper('I18N', 'Date') ?]
 [?php include_partial('<?php echo $this->getModuleName() ?>/assets') ?]
 
+<?php if($this->configuration->hasListPartial()) : ?>
+  <div class="sf_admin_right_column">
+  <?php foreach($this->configuration->getListPartial() as $partial): ?>
+    [?php include_partial('<?php echo $partial ?>', array('pager' => $pager, 'helper' => $helper)) ?]
+  <?php endforeach; ?>
+  </div>
+  <div class="sf_admin_with_right_colum">
+<?php endif; ?>
+
   <h2 class="mbl">[?php echo <?php echo $this->getI18NString('list.title') ?> ?]</h2>
 
   [?php include_partial('<?php echo $this->getModuleName() ?>/flashes') ?]
@@ -23,3 +32,6 @@
   <div id="sf_admin_footer">
     [?php include_partial('<?php echo $this->getModuleName() ?>/list_footer', array('pager' => $pager)) ?]
   </div>
+<?php if($this->configuration->hasListPartial()) : ?>
+</div>
+<?php endif; ?>

@@ -7,6 +7,7 @@ Table of Contents
 :: Module
 :: Top Bar
 :: Main Content
+:: Partial
 */
 
 
@@ -268,3 +269,12 @@ Main Content
 .actions li { display: inline }
 #batch_checked_ids { display: none; }
 
+/* -----------------------------------------
+Partial
+----------------------------------------- */
+.sf_admin_right_column {float:right;width:300px;padding:0 0 0 10px;}
+.sf_admin_with_right_colum {margin-right:320px;}
+
+.item-information{font-size:0.8em;font-style: italic; text-align:right;}
+.item-record{margin-top:1em; padding-top: 0.5em;}
+.item-record.other{border-top: 1px solid #D5D8D8; }

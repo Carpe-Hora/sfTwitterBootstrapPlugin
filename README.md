@@ -140,3 +140,26 @@ Overwrite the signinSuccess into ``apps/backend/modules/sfGuardAuth/templates/si
 
 You can follow _Step 3_ to  _Step 5_ from the [readme file of sfAdminDashPlugin](https://github.com/kbond/sfAdminDashPlugin/blob/master/README.md) to setup dashboard / menu items.
 We use different icons in comparison to sfAdminDash. Check the folder ``images``.
+
+## include partials on the right
+
+```yaml
+generator:
+  ...
+  config:
+    ...
+    edit:
+      ...
+      partial: ['module/partial']
+```
+
+Some partials are bundeled with the plugin :
+
+### Propel behaviors
+
+* versionable: ```propel_behaviors/versionable_version_list```
+* auditable: ```propel_behaviors/auditable_log_list```
+
+missing : Timestampable, Geocodable, I18n, Taggable, Ratable, Commentable, NestedSet, Sluggable
+
+![Preview of extra partials](https://github.com/real-chocopanda/sfTwitterBootstrapPlugin/raw/master/doc/behavior-templates.png)

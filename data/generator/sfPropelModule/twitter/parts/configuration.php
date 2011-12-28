@@ -56,4 +56,49 @@ abstract class Base<?php echo ucfirst($this->getModuleName()) ?>GeneratorConfigu
     return <?php echo $this->asPhp(isset($this->config['list']['query_methods']) ? $this->config['list']['query_methods'] : array()) ?>;
 <?php unset($this->config['list']['query_methods']) ?>
   }
+
+  public function hasListPartial()
+  {
+    return <?php echo $this->asPhp(isset($this->config['list']['partial']) ? true : false) ?>;
+  }
+
+  public function getListPartial()
+  {
+    return <?php echo $this->asPhp(isset($this->config['list']['partial'])
+                                        ? is_array($this->config['list']['partial'])
+                                            ? $this->config['list']['partial']
+                                            : array($this->config['list']['partial'])
+                                        : array()) ?>;
+<?php unset($this->config['list']['partial']) ?>
+  }
+
+  public function hasEditPartial()
+  {
+    return <?php echo $this->asPhp(isset($this->config['edit']['partial']) ? true : false) ?>;
+  }
+
+  public function getEditPartial()
+  {
+    return <?php echo $this->asPhp(isset($this->config['edit']['partial'])
+                                        ? is_array($this->config['edit']['partial'])
+                                            ? $this->config['edit']['partial']
+                                            : array($this->config['edit']['partial'])
+                                        : array()) ?>;
+<?php unset($this->config['edit']['partial']) ?>
+  }
+
+  public function hasNewPartial()
+  {
+    return <?php echo $this->asPhp(isset($this->config['new']['partial']) ? true : false) ?>;
+  }
+
+  public function getNewPartial()
+  {
+    return <?php echo $this->asPhp(isset($this->config['new']['partial'])
+                                        ? is_array($this->config['new']['partial'])
+                                            ? $this->config['new']['partial']
+                                            : array($this->config['new']['partial'])
+                                        : array()) ?>;
+<?php unset($this->config['new']['partial']) ?>
+  }
 }
