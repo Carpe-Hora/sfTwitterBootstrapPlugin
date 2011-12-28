@@ -31,7 +31,7 @@ abstract class sfTwitterModelGeneratorHelper extends sfModelGeneratorHelper
     if (isset($params['confirm'])) {
       $confirm = $this->generateDeleteConfirm($params['confirm']);
     }
-    
+
     return '<li class="delete">'.link_to(__($params['label'], array(), 'sf_admin'), $this->getUrlForAction('delete'), $object, array('method' => 'delete', 'onclick' => $confirm)).'</li>';
   }
 
@@ -47,7 +47,7 @@ abstract class sfTwitterModelGeneratorHelper extends sfModelGeneratorHelper
       $confirm = $this->generateDeleteConfirm($params['confirm']);
     }
 
-    return '<li class="delete">'.link_to(__($params['label'], array(), 'sf_admin'), $this->getUrlForAction('delete'), $object, array('class' => 'btn danger delete', 'onclick' => $confirm)).'</li>';
+    return '<li class="delete">'.link_to(__($params['label'], array(), 'sf_admin'), $this->getUrlForAction('delete'), $object, array('class' => 'btn danger delete mlm', 'onclick' => $confirm)).'</li>';
   }
 
   public function linkToList($params)

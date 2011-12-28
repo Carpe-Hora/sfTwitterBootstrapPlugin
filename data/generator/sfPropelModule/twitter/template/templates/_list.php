@@ -5,8 +5,9 @@
     [?php echo $filters->renderGlobalErrors() ?]
 [?php endif; ?]
 <?php endif; ?>
-<div class="sf_admin_list">
-     <table class="sortTable bordered-table zebra-striped mbn">
+
+  <div class="sf_admin_list">
+    <table class="sortTable bordered-table zebra-striped mbn">
       <thead>
         <tr>
 <?php if ($this->configuration->getValue('list.batch_actions')): ?>
@@ -45,18 +46,19 @@
 
     [?php if ($pager->getNbResults()): ?]
     <div class="cf">
-        <div class="table-result fLeft">
-            [?php echo format_number_choice('[0] no result|[1] 1 result|(1,+Inf] %1% results', array('%1%' => $pager->getNbResults()), $pager->getNbResults(), 'sf_admin') ?]
-            [?php if ($pager->haveToPaginate()): ?]
-              [?php echo __('(page %%page%%/%%nb_pages%%)', array('%%page%%' => $pager->getPage(), '%%nb_pages%%' => $pager->getLastPage()), 'sf_admin') ?]
-            [?php endif; ?]
-        </div>
+      <div class="table-result fLeft">
+        [?php echo format_number_choice('[0] no result|[1] 1 result|(1,+Inf] %1% results', array('%1%' => $pager->getNbResults()), $pager->getNbResults(), 'sf_admin') ?]
         [?php if ($pager->haveToPaginate()): ?]
-          [?php include_partial('<?php echo $this->getModuleName() ?>/pagination', array('pager' => $pager)) ?]
+          [?php echo __('(page %%page%%/%%nb_pages%%)', array('%%page%%' => $pager->getPage(), '%%nb_pages%%' => $pager->getLastPage()), 'sf_admin') ?]
         [?php endif; ?]
+      </div>
+      [?php if ($pager->haveToPaginate()): ?]
+        [?php include_partial('<?php echo $this->getModuleName() ?>/pagination', array('pager' => $pager)) ?]
+      [?php endif; ?]
     </div>
     [?php endif; ?]
-</div>
+  </div>
+
 <script type="text/javascript">
 /* <![CDATA[ */
 function checkAll()

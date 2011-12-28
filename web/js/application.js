@@ -40,6 +40,19 @@ $(document).ready(function(){
     $(window).scrollTop($('#sf_fieldset_'+field).position().top + 30);
     return false;
   })
+
+  $('#more-filters').click(function() {
+    $('#modal-more-filters').modal({
+      keyboard: true,
+      backdrop: true,
+      show: true,
+    })
+    return false;
+  })
+
+  $('#close-modal-filters').click(function() {
+    $('#modal-more-filters').modal('hide');
+  })
 });
 
 /**
