@@ -151,6 +151,11 @@ Overwrite the signinSuccess into ``apps/backend/modules/sfGuardAuth/templates/si
 You can follow _Step 3_ to  _Step 5_ from the [readme file of sfAdminDashPlugin](https://github.com/kbond/sfAdminDashPlugin/blob/master/README.md) to setup dashboard / menu items.
 We use different icons in comparison to sfAdminDash. Check the folder ``images``.
 
+
+An additional parameter is available:
+
+* ```breadcrumb_root_name: Home # string used as root of breadcrumb```
+
 ## include partials on the right
 
 ```yaml

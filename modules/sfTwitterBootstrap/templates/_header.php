@@ -26,7 +26,7 @@ use_helper('I18N');
 <?php if ($sf_user->isAuthenticated() && sfTwitterBootstrap::getProperty('include_path')): ?>
 <ul class='breadcrumb mbs'>
   <li>
-    <?php echo link_to(__('Home'), sfTwitterBootstrap::getProperty('dashboard_url')) ?>
+    <?php echo link_to(__(sfTwitterBootstrap::getProperty('breadcrumb_root_name')), sfTwitterBootstrap::getProperty('dashboard_url')) ?>
   </li>
   <?php if ($sf_context->getModuleName() != 'sfTwitterBootstrap' && $sf_context->getActionName() != 'dashboard'): ?>
     <li><span class="divider">/</span>
