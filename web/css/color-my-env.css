@@ -1,0 +1,15 @@
+/* ----------------------------------------
+Colors by env
+----------------------------------------- */
+.dev .topbar-inner {
+    background-color: #ff4020;
+    background-image: -moz-linear-gradient(center top , #ff8020, #ff4020);
+}
+.dev.topbar a {
+    color: black;
+}
+
+.preprod .topbar-inner{
+    background-color: purple;
+    background-image: -moz-linear-gradient(center top , #e060ff, purple);
+}

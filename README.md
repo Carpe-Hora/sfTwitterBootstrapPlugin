@@ -62,6 +62,14 @@ default:
   layout:         %SF_PLUGINS_DIR%/sfTwitterBootstrapPlugin/templates/layout
 ```
 
+If you want to active colors by env add stylesheet :
+
+```yaml
+default:
+  stylesheets:
+    - /sfTwitterBootstrapPlugin/css/color-my-env.css
+```
+
 In ``apps/backend/config/app.yml``
 
 ```yaml

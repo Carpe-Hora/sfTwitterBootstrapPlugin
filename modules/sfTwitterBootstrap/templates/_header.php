@@ -7,7 +7,7 @@ use_helper('I18N');
 /** @var string|null Link to the action (for breadcrumbs) */ $action_link = $sf_data->getRaw('action_link');
 
 ?>
-<div class="topbar">
+<div class="topbar <?php echo sfConfig::get('sf_environment'); ?>">
    <div class="topbar-inner">
       <div class="container-fluid">
         <a class="brand" href="<?php echo url_for('@homepage') ?>"><?php echo sfTwitterBootstrap::getProperty('site'); ?></a>
