@@ -16,7 +16,7 @@ class PluginSfTwitterBootstrapComponents extends sfComponents
 
     if (sfConfig::get('sf_error_404_module') == $this->getContext()->getModuleName() && sfConfig::get('sf_error_404_action') == $this->getContext()->getActionName())
     {
-      sfAdminDash::setProperty('include_path', false); // we don't render the breadcrumbs when we are in a 404 error module/action
+      sfTwitterBootstrap::setProperty('include_path', false); // we don't render the breadcrumbs when we are in a 404 error module/action
       $this->module_link = null;
       $this->action_link = null;
     }
