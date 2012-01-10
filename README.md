@@ -78,6 +78,8 @@ all:
     site:                   Your project name
     # if you want top links to fieldset legend in new/edit page (like "Admin & Content" in the edit screenshot)
     top_link_to_fieldset:   true
+    # if you *also* want to display the pagination on top of the list
+    display_top_pagination: true
 ```
 
 In ``apps/backend/config/settings.yml``
