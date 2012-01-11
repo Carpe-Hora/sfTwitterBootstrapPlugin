@@ -85,6 +85,10 @@ input[type="checkbox"] {
   margin-top: 9px;
 }
 
+input[type="radio"] {
+  width: auto;
+}
+
 /* styling the `is_empty` checkbox using CCS3 */
 input[type="checkbox"][name*="is_empty"] {
   margin: 0 0 0 5px;
