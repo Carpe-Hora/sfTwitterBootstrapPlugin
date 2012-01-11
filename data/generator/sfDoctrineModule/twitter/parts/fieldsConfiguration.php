@@ -28,6 +28,12 @@
 <?php unset($this->config['new']['title']) ?>
   }
 
+  public function getShowTitle()
+  {
+    return '<?php echo $this->escapeString(isset($this->config['show']['title']) ? $this->config['show']['title'] : 'Show '.sfInflector::humanize($this->getModuleName())) ?>';
+<?php unset($this->config['show']['title']) ?>
+  }
+
   public function getFilterDisplay()
   {
     return <?php echo $this->asPhp(isset($this->config['filter']['display']) ? $this->config['filter']['display'] : array()) ?>;
@@ -64,6 +70,18 @@
 <?php unset($this->config['list']['display'], $this->config['list']['hide']) ?>
   }
 
+  public function getShowDisplay()
+  {
+<?php if (isset($this->config['show']['display'])): ?>
+    return <?php echo $this->asPhp($this->config['show']['display']) ?>;
+<?php elseif (isset($this->config['show']['hide'])): ?>
+    return <?php echo $this->asPhp(array_diff($this->getAllFieldNames(false), $this->config['show']['hide'])) ?>;
+<?php else: ?>
+    return <?php echo $this->asPhp($this->getAllFieldNames(false)) ?>;
+<?php endif; ?>
+<?php unset($this->config['show']['display'], $this->config['show']['hide']) ?>
+  }
+
   public function getFieldsDefault()
   {
     return array(
@@ -73,7 +91,7 @@
     );
   }
 
-<?php foreach (array('list', 'filter', 'form', 'edit', 'new') as $context): ?>
+<?php foreach (array('list', 'filter', 'form', 'edit', 'new', 'show') as $context): ?>
   public function getFields<?php echo ucfirst($context) ?>()
   {
     return array(
