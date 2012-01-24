@@ -1,4 +1,4 @@
-<div class="actions">
+<ul class="actions">
 <?php foreach (array('new', 'edit') as $action): ?>
 <?php if ('new' == $action): ?>
 [?php if ($form->isNew()): ?]
@@ -35,4 +35,4 @@
 <?php endforeach; ?>
 <?php endforeach; ?>
 [?php endif; ?]
-</div>
+</ul>
