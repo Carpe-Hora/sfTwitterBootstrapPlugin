@@ -7,6 +7,7 @@
         [?php if ($pager->haveToPaginate()): ?]
           [?php echo __('(page %%page%%/%%nb_pages%%)', array('%%page%%' => $pager->getPage(), '%%nb_pages%%' => $pager->getLastPage()), 'sf_admin') ?]
         [?php endif; ?]
+        <span class="help-inline">[?php echo format_number_choice('[0] no item on this page|[1] 1 item on this page|(1,+Inf] %1% items on this page', array('%1%' => count($pager->getResults())), count($pager->getResults()), 'sf_admin') ?]</span>
       </div>
 
       [?php if ($pager->haveToPaginate()): ?]
