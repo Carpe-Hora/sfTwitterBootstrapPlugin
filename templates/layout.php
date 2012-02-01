@@ -4,7 +4,6 @@
     <?php include_title() ?>
     <?php include_http_metas() ?>
     <?php include_metas() ?>
-    <?php include_javascripts() ?>
 
     <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
     <!--[if lt IE 9]>
@@ -24,6 +23,7 @@
       <?php echo $sf_content ?>
     </div>
 
+    <?php include_javascripts() ?>
     <script>$(function () { prettyPrint() })</script>
 
   </body>
