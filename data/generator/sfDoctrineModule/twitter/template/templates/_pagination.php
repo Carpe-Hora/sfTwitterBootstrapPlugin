@@ -6,7 +6,17 @@
         [?php echo format_number_choice('[0] no result|[1] 1 result|(1,+Inf] %1% results', array('%1%' => $pager->getNbResults()), $pager->getNbResults(), 'sf_admin') ?]
         [?php if ($pager->haveToPaginate()): ?]
           [?php echo __('(page %%page%%/%%nb_pages%%)', array('%%page%%' => $pager->getPage(), '%%nb_pages%%' => $pager->getLastPage()), 'sf_admin') ?]
-          <span class="help-inline">[?php echo format_number_choice('[0] no item on this page|[1] 1 item on this page|(1,+Inf] %1% items on this page', array('%1%' => count($pager->getResults())), count($pager->getResults()), 'sf_admin') ?]</span>
+          <span class="help-inline">
+            [?php
+              $nb = $pager->getMaxPerPage();
+              if($pager->getPage() == $pager->getLastPage())
+              {
+                // we calculate the modulo between the total result and the max_per_page to get the rest of the results
+                $nb = $pager->getNbResults() % $pager->getMaxPerPage();
+              }
+              echo format_number_choice('[0] no item on this page|[1] 1 item on this page|(1,+Inf] %1% items on this page', array('%1%' => $nb), $nb, 'sf_admin')
+            ?]
+          </span>
         [?php endif; ?]
       </div>
 
