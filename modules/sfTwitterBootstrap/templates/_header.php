@@ -7,19 +7,19 @@ use_helper('I18N');
 /** @var string|null Link to the action (for breadcrumbs) */ $action_link = $sf_data->getRaw('action_link');
 
 ?>
-<div class="topbar <?php echo sfConfig::get('sf_environment'); ?>">
-   <div class="topbar-inner">
-      <div class="container-fluid">
-        <a class="brand" href="<?php echo url_for('@homepage') ?>"><?php echo sfTwitterBootstrap::getProperty('site'); ?></a>
+<div class="navbar navbar-fixed-top <?php echo sfConfig::get('sf_environment'); ?>">
+  <div class="navbar-inner">
+    <div class="container-fluid">
+      <a class="brand" href="<?php echo url_for('@homepage') ?>"><?php echo sfTwitterBootstrap::getProperty('site'); ?></a>
 
 <?php if ($sf_user->isAuthenticated()): ?>
         <?php include_partial('sfTwitterBootstrap/menu', array('items' => $items, 'categories' => $categories)); ?>
         <p class="logout pull-right">
-            <?php echo link_to(image_tag('/sfTwitterBootstrapPlugin/images/logout_icon.png'), sfTwitterBootstrap::getProperty('logout_route')) ?>
+          <?php echo link_to(image_tag('/sfTwitterBootstrapPlugin/images/logout_icon.png'), sfTwitterBootstrap::getProperty('logout_route')) ?>
         </p>
         <p class="logged pull-right primary-color"><?php echo __('Logged in as') ?> <a href="#"><?php echo $sf_user->__toString(); ?></a></p>
 <?php endif; // if user is authenticated ?>
-        </div>
+      </div>
     </div>
 </div>
 
@@ -32,7 +32,7 @@ use_helper('I18N');
     <li><span class="divider">/</span>
     <?php echo null !== $module_link ? link_to(__($module_link_name), $module_link) : ucfirst(__($module_link_name)); ?>
     <?php if (null != $action_link): ?><span class="divider">/</span>
-       <?php echo link_to(ucfirst(__($action_link_name)), $action_link); ?>
+      <?php echo link_to(ucfirst(__($action_link_name)), $action_link); ?>
     <?php endif ?></li>
   <?php endif; ?>
 </ul>

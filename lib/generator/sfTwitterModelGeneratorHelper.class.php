@@ -12,7 +12,7 @@ abstract class sfTwitterModelGeneratorHelper extends sfModelGeneratorHelper
 {
   public function linkToNew($params)
   {
-    return '<a class="btn success" href="'.url_for('@'.$this->getUrlForAction('new')).'">'.__($params['label'], array(), 'sf_admin').'</a>';
+    return '<a class="btn btn-success" href="'.url_for('@'.$this->getUrlForAction('new')).'">'.__($params['label'], array(), 'sf_admin').'</a>';
   }
 
   public function linkToEdit($object, $params)
@@ -47,17 +47,17 @@ abstract class sfTwitterModelGeneratorHelper extends sfModelGeneratorHelper
       $confirm = $this->generateDeleteConfirm($params['confirm']);
     }
 
-    return '<li class="delete">'.link_to(__($params['label'], array(), 'sf_admin'), $this->getUrlForAction('delete'), $object, array('class' => 'btn danger delete mlm', 'onclick' => $confirm)).'</li>';
+    return link_to(__($params['label'], array(), 'sf_admin'), $this->getUrlForAction('delete'), $object, array('class' => 'btn btn-danger delete mlm', 'onclick' => $confirm));
   }
 
   public function linkToList($params)
   {
-    return '<li>'.link_to(__($params['label'], array(), 'sf_admin'), '@'.$this->getUrlForAction('list'), array('class' => 'btn mlm')).'</li>';
+    return link_to(__($params['label'], array(), 'sf_admin'), '@'.$this->getUrlForAction('list'), array('class' => 'btn mlm'));
   }
 
   public function linkToSave($object, $params)
   {
-    return '<li><input class="btn primary mlm" type="submit" value="'.__($params['label'], array(), 'sf_admin').'" /></li>';
+    return '<input class="btn btn-primary mlm" type="submit" value="'.__($params['label'], array(), 'sf_admin').'" />';
   }
 
   public function linkToSaveAndAdd($object, $params)
@@ -67,7 +67,7 @@ abstract class sfTwitterModelGeneratorHelper extends sfModelGeneratorHelper
       return '';
     }
 
-    return '<li><input class="btn success mlm" type="submit" value="'.__($params['label'], array(), 'sf_admin').'" name="_save_and_add" /></li>';
+    return '<input class="btn btn-success mlm" type="submit" value="'.__($params['label'], array(), 'sf_admin').'" name="_save_and_add" />';
   }
 
   protected function generateDeleteConfirm($confirm)

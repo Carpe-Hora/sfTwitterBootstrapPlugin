@@ -256,18 +256,18 @@ class sfTwitterBootstrap
     switch($type)
     {
       case 'Date':
-        return 'mini';
+        return 'input-mini';
         break;
 
       case 'Boolean': // boolean is here because of the "yes or no" in the filter form
       case 'Number':
-        return 'small';
+        return 'input-small';
         break;
 
       case 'Text': // input and textarea are in the same boat ...
       case 'ForeignKey':
       default:
-        return 'large';
+        return 'input-large';
         break;
     }
   }

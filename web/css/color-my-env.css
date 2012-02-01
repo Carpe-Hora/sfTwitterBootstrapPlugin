@@ -1,43 +1,54 @@
 /* ----------------------------------------
-Colors by env
+    Colors by env
 ----------------------------------------- */
-.dev .topbar-inner {
-    background-color: #ff4020;
-	background-image: linear-gradient(top, #FF4120, #FF8120);
-	background-image: -o-linear-gradient(top, #FF4120, #FF8120);
-	background-image: -moz-linear-gradient(top, #FF4120, #FF8120);
-	background-image: -webkit-linear-gradient(top, #FF4120, #FF8120);
-	background-image: -ms-linear-gradient(top, #FF4120, #FF8120);
-	
-	background-image: -webkit-gradient(
-	    linear,
-	    left top,
-	    left top,
-	    color-stop(0, #FF4120),
-	    color-stop(1, #FF8120)
-	);
-}
-.dev.topbar a {
-    color: black;
+.dev .navbar-inner {
+  background-color: #ff4020;
+  background-image: linear-gradient(top, #FF4120, #FF8120);
+  background-image: -o-linear-gradient(top, #FF4120, #FF8120);
+  background-image: -moz-linear-gradient(top, #FF4120, #FF8120);
+  background-image: -webkit-linear-gradient(top, #FF4120, #FF8120);
+  background-image: -ms-linear-gradient(top, #FF4120, #FF8120);
+
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    left top,
+    color-stop(0, #FF4120),
+    color-stop(1, #FF8120)
+  );
 }
 
-.preprod .topbar-inner{
-    background-color: purple;
-    background-image: linear-gradient(top, #e060ff, purple);
-    background-image: -o-linear-gradient(top, #e060ff, purple);
-    background-image: -moz-linear-gradient(top, #e060ff, purple);
-    background-image: -webkit-linear-gradient(top, #e060ff, purple);
-    background-image: -ms-linear-gradient(top, #e060ff, purple);
-    
-    background-image: -webkit-gradient(
-        linear,
-        left top,
-        left top,
-        color-stop(0, #e060ff),
-        color-stop(1, purple)
-    );
+.dev.navbar .dropdown-menu li > a:hover, .dev.navbar .dropdown-menu .active > a, .dev.navbar .dropdown-menu .active > a:hover {
+  background-color: #FF4120;
 }
 
-.preprod.topbar a {
-    color: #ffffff;
+.preprod .navbar-inner{
+  background-color: purple;
+  background-image: linear-gradient(top, #e060ff, purple);
+  background-image: -o-linear-gradient(top, #e060ff, purple);
+  background-image: -moz-linear-gradient(top, #e060ff, purple);
+  background-image: -webkit-linear-gradient(top, #e060ff, purple);
+  background-image: -ms-linear-gradient(top, #e060ff, purple);
+
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    left top,
+    color-stop(0, #e060ff),
+    color-stop(1, purple)
+  );
+}
+
+.preprod.navbar .dropdown-menu li > a:hover, .preprod.navbar .dropdown-menu .active > a, .preprod.navbar .dropdown-menu .active > a:hover {
+  background-color: #e060ff;
+}
+
+.dev.navbar .nav > li > a, .preprod.navbar .nav > li > a {
+  color: white;
+}
+
+.dev.navbar .caret, .preprod.navbar .caret {
+  opacity: 0.7;
+  -moz-opacity: 0.7;
+  filter:alpha(opacity=7);
 }

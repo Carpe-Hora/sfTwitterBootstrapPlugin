@@ -23,7 +23,7 @@
     <?php endforeach; ?>
     <td>
         [?php echo $filters->renderHiddenFields() ?]
-        <input type="submit" class="btn info" value="[?php echo __('Filter', array(), 'sf_admin') ?]" />
+        <input type="submit" class="btn btn-info btn-fix-margin" value="[?php echo __('Filter', array(), 'sf_admin') ?]" />
         [?php echo link_to(__('Reset', array(), 'sf_admin'), '<?php echo $this->getUrlForAction('collection') ?>', array('action' => 'filter'), array('class' => 'btn', 'query_string' => '_reset', 'method' => 'post')) ?]
     </td>
   </tr>
