@@ -199,3 +199,18 @@ Overwrite the signinSuccess into ``apps/backend/modules/sfGuardAuth/templates/si
 You can follow _Step 3_ to  _Step 5_ from the [readme file of sfAdminDashPlugin](https://github.com/kbond/sfAdminDashPlugin/blob/master/README.md) to setup dashboard / menu items.
 We use different icons in comparison to sfAdminDash. Check the folder ``images``.
 
+## Display custom field in a form
+
+We often need to extends form display in the admin generator to display additional information, or a plain text field, etc .. To do that, you need to indicate a partial in generator.yml (like `_member_id`) and use this template to have a nice render :
+
+``` php
+  <div class="control-group sf_admin_form_row sf_admin_text">
+    <label class="control-label" for="member_id">Member</label>
+    <div class="controls">
+      <?php echo $form['member_id']->render(); ?>
+      <div class="input-large">&raquo; <?php echo $form->getObject()->getMember() ?></div>
+    </div>
+  </div>
+```
+
+Of course, you will have to edit it (and replace php action with yours) but keep the html structure.
