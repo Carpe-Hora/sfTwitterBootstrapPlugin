@@ -1,6 +1,7 @@
 $(document).ready(function(){
 
   $('.dropdown-toggle').dropdown();
+  $(".alert-message").alert();
 
   // add on logic
   // ============
