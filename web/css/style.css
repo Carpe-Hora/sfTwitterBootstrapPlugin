@@ -121,9 +121,13 @@ fieldset legend {
   line-height: 20px;
 }
 
+.error-block {
+  display: block;
+}
+
 .loginFieldset { border:none; }
 .loginFieldset legend { padding: 10px 0 0 20px; }
-.loginFieldset div.error .help-block { margin-left: 150px; }
+.loginFieldset div.error .help-block { margin-left: 160px; }
 
 .pagination {
   margin: 0;
@@ -254,8 +258,10 @@ s,m,l,n = small(5px),medium(10px),large(20px),none(0px)
 /* -----------------------------------------
     Top Bar
 ----------------------------------------- */
-.logged { background:url("../images/user_login.png") no-repeat center left; padding: 0 10px 0 20px; }
+.logged { padding: 11px 10px 0 20px; }
 p.logout img { height: 20px; vertical-align: -25%; }
+p.logout.pull-right { padding-top: 12px; }
+p.logged { color: #999; text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25) }
 
 /* -----------------------------------------
     Main Content

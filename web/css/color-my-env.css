@@ -43,8 +43,12 @@
   background-color: #e060ff;
 }
 
-.dev.navbar .nav > li > a, .preprod.navbar .nav > li > a {
+.dev.navbar .nav > li > a, .preprod.navbar .nav > li > a, p.logged {
   color: white;
+}
+
+.dev p.logged a, .preprod p.logged a {
+  color: black;
 }
 
 .dev.navbar .caret, .preprod.navbar .caret {
