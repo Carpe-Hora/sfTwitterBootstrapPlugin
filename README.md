@@ -41,7 +41,7 @@ In ``apps/backend/config/view.yml``
 ```yaml
 default:
   stylesheets:
-    - /sfTwitterBootstrapPlugin/bootstrap/bootstrap.css
+    - /sfTwitterBootstrapPlugin/bootstrap/docs/assets/css/bootstrap.css # compiled css are now in the docs ...
     - /sfTwitterBootstrapPlugin/css/style.css
     - /sfTwitterBootstrapPlugin/css/jquery-ui-1.8.16.custom.css # For date pickers ...
     - main.css
@@ -51,9 +51,10 @@ default:
     - "/sfTwitterBootstrapPlugin/js/jquery.tablesorter.min.js"
     - "/sfTwitterBootstrapPlugin/js/google-code-prettify/prettify.js"
     - "/sfTwitterBootstrapPlugin/bootstrap/js/bootstrap-dropdown.js"
-    - "/sfTwitterBootstrapPlugin/bootstrap/js/bootstrap-twipsy.js"
+    - "/sfTwitterBootstrapPlugin/bootstrap/js/bootstrap-tooltip.js"
     - "/sfTwitterBootstrapPlugin/bootstrap/js/bootstrap-scrollspy.js"
     - "/sfTwitterBootstrapPlugin/bootstrap/js/bootstrap-modal.js"
+    - "/sfTwitterBootstrapPlugin/bootstrap/js/bootstrap-alert.js"
     - "/sfTwitterBootstrapPlugin/js/application.js"
     - "/sfTwitterBootstrapPlugin/js/bootbox/bootbox.min.js"
     - "/sfTwitterBootstrapPlugin/js/jquery-ui-1.8.16.custom.min.js" # For date pickers ...
@@ -80,6 +81,8 @@ all:
     top_link_to_fieldset:   true
     # if you *also* want to display the pagination on top of the list
     display_top_pagination: true
+    # display bootstrap icon before text in all button
+    use_icons_in_button     true
 ```
 
 In ``apps/backend/config/settings.yml``
@@ -117,6 +120,51 @@ generator:
     ...
 ```
 
+### add a custom icon in your button
+
+The configuration value `use_icons_in_button` must be set to `true`.
+
+generator:
+  ...
+  config:
+    ...
+    list:
+      actions:
+        ...
+        newListActions:  {label: "New list action", icon: "icon-download"}
+      object_actions:
+        ...
+        newObjectActions: {label: "New object action", icon: "icon-asterisk"}
+    edit:
+      ...
+      actions:
+        ...
+        newFormActions:  {label: "New form action", icon: "icon-comment"}
+
+### include partials on the right
+
+```yaml
+generator:
+  ...
+  config:
+    ...
+    edit:
+      ...
+      partial: ['module/partial']
+```
+
+Some partials are bundeled with the plugin :
+
+#### Propel behaviors
+
+* versionable: ```propel_behaviors/versionable_version_list```
+* auditable: ```propel_behaviors/auditable_log_list```
+
+missing : Timestampable, Geocodable, I18n, Taggable, Ratable, Commentable, NestedSet, Sluggable
+
+![Preview of extra partials](https://github.com/real-chocopanda/sfTwitterBootstrapPlugin/raw/master/doc/behavior-templates.png)
+
+
 ## Include a slot in all your screens :
 
 Edit ``view.yml``
@@ -151,25 +199,3 @@ Overwrite the signinSuccess into ``apps/backend/modules/sfGuardAuth/templates/si
 You can follow _Step 3_ to  _Step 5_ from the [readme file of sfAdminDashPlugin](https://github.com/kbond/sfAdminDashPlugin/blob/master/README.md) to setup dashboard / menu items.
 We use different icons in comparison to sfAdminDash. Check the folder ``images``.
 
-## include partials on the right
-
-```yaml
-generator:
-  ...
-  config:
-    ...
-    edit:
-      ...
-      partial: ['module/partial']
-```
-
-Some partials are bundeled with the plugin :
-
-### Propel behaviors
-
-* versionable: ```propel_behaviors/versionable_version_list```
-* auditable: ```propel_behaviors/auditable_log_list```
-
-missing : Timestampable, Geocodable, I18n, Taggable, Ratable, Commentable, NestedSet, Sluggable
-
-![Preview of extra partials](https://github.com/real-chocopanda/sfTwitterBootstrapPlugin/raw/master/doc/behavior-templates.png)

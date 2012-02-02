@@ -8,7 +8,11 @@
     <?php else: ?>
 
       <?php
-        $params['params'] = is_array($params['params']) ? array_merge($params['params'], array('class' => 'btn')) : array('class' => 'btn') ;
+        $params['params'] = is_array($params['params']) ? array_merge($params['params'], array('class' => 'btn')) : array('class' => 'btn');
+        if(sfTwitterBootstrap::getProperty('use_icons_in_button', false))
+        {
+          $params['label'] = isset($params['icon']) ? '<i class="'.$params['icon'].'"></i> ' . $params['label'] : $params['label'];
+        }
         echo $this->addCredentialCondition($this->getLinkToAction($name, $params, false), $params)."\n"
       ?>
 
@@ -61,8 +65,15 @@
     </form>
   </div>
 
+  [?php
+    $icon = '';
+    if(sfTwitterBootstrap::getProperty('use_icons_in_button', false))
+    {
+      $icon = '<i class="icon-plus-sign icon-white"></i> ';
+    }
+  ?]
+
   <div class="fRight" style="margin-right: 4px">
-    <a id="more-filters" href="#more-filters" class="btn btn-info">[?php echo __('More filters') ?]</a>
+    <a id="more-filters" href="#more-filters" class="btn btn-info">[?php echo $icon . __('More filters') ?]</a>
   </div>
 <?php endif; ?>
-

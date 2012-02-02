@@ -12,12 +12,18 @@ abstract class sfTwitterModelGeneratorHelper extends sfModelGeneratorHelper
 {
   public function linkToNew($params)
   {
-    return '<a class="btn btn-success" href="'.url_for('@'.$this->getUrlForAction('new')).'">'.__($params['label'], array(), 'sf_admin').'</a>';
+    $icon = '';
+    if(sfTwitterBootstrap::getProperty('use_icons_in_button', false))
+    {
+      $icon = '<i class="icon-plus icon-white"></i> ';
+    }
+
+    return '<a class="btn btn-success" href="'.url_for('@'.$this->getUrlForAction('new')).'">' . $icon . __($params['label'], array(), 'sf_admin').'</a>';
   }
 
   public function linkToEdit($object, $params)
   {
-    return '<li class="edit">'.link_to(__($params['label'], array(), 'sf_admin'), $this->getUrlForAction('edit'), $object).'</li>';
+    return '<li><i class="icon-pencil"></i> '.link_to(__($params['label'], array(), 'sf_admin'), $this->getUrlForAction('edit'), $object).'</li>';
   }
 
   public function linkToDelete($object, $params)
@@ -28,11 +34,12 @@ abstract class sfTwitterModelGeneratorHelper extends sfModelGeneratorHelper
     }
 
     $confirm = '';
-    if (isset($params['confirm'])) {
+    if (isset($params['confirm']))
+    {
       $confirm = $this->generateDeleteConfirm($params['confirm']);
     }
 
-    return '<li class="delete">'.link_to(__($params['label'], array(), 'sf_admin'), $this->getUrlForAction('delete'), $object, array('method' => 'delete', 'onclick' => $confirm)).'</li>';
+    return '<li><i class="icon-remove"></i> '.link_to(__($params['label'], array(), 'sf_admin'), $this->getUrlForAction('delete'), $object, array('method' => 'delete', 'onclick' => $confirm)).'</li>';
   }
 
   public function linkToDeleteBtn($object, $params)
@@ -43,21 +50,40 @@ abstract class sfTwitterModelGeneratorHelper extends sfModelGeneratorHelper
     }
 
     $confirm = '';
-    if (isset($params['confirm'])) {
+    if (isset($params['confirm']))
+    {
       $confirm = $this->generateDeleteConfirm($params['confirm']);
     }
 
-    return link_to(__($params['label'], array(), 'sf_admin'), $this->getUrlForAction('delete'), $object, array('class' => 'btn btn-danger delete mlm', 'onclick' => $confirm));
+    $icon = '';
+    if(sfTwitterBootstrap::getProperty('use_icons_in_button', false))
+    {
+      $icon = '<i class="icon-remove icon-white"></i> ';
+    }
+
+    return link_to($icon . __($params['label'], array(), 'sf_admin'), $this->getUrlForAction('delete'), $object, array('class' => 'btn btn-danger delete mlm', 'onclick' => $confirm));
   }
 
   public function linkToList($params)
   {
-    return link_to(__($params['label'], array(), 'sf_admin'), '@'.$this->getUrlForAction('list'), array('class' => 'btn mlm'));
+    $icon = '';
+    if(sfTwitterBootstrap::getProperty('use_icons_in_button', false))
+    {
+      $icon = '<i class="icon-list-alt"></i> ';
+    }
+
+    return link_to($icon . __($params['label'], array(), 'sf_admin'), '@'.$this->getUrlForAction('list'), array('class' => 'btn mlm'));
   }
 
   public function linkToSave($object, $params)
   {
-    return '<input class="btn btn-primary mlm" type="submit" value="'.__($params['label'], array(), 'sf_admin').'" />';
+    $icon = '';
+    if(sfTwitterBootstrap::getProperty('use_icons_in_button', false))
+    {
+      $icon = '<i class="icon-ok icon-white"></i> ';
+    }
+
+    return '<button class="btn btn-primary mlm" type="submit">'. $icon . __($params['label'], array(), 'sf_admin').'</button>';
   }
 
   public function linkToSaveAndAdd($object, $params)
@@ -67,7 +93,13 @@ abstract class sfTwitterModelGeneratorHelper extends sfModelGeneratorHelper
       return '';
     }
 
-    return '<input class="btn btn-success mlm" type="submit" value="'.__($params['label'], array(), 'sf_admin').'" name="_save_and_add" />';
+    $icon = '';
+    if(sfTwitterBootstrap::getProperty('use_icons_in_button', false))
+    {
+      $icon = '<i class="icon-ok icon-white"></i> ';
+    }
+
+    return '<button class="btn btn-primary mlm" type="submit" name="_save_and_add">'. $icon . __($params['label'], array(), 'sf_admin').'</button>';
   }
 
   protected function generateDeleteConfirm($confirm)
