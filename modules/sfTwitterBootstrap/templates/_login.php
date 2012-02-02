@@ -1,4 +1,12 @@
-<?php use_helper('I18N'); ?>
+<?php
+  use_helper('I18N');
+
+  $icon = '';
+  if(sfTwitterBootstrap::getProperty('use_icons_in_button', false))
+  {
+    $icon = '<i class="icon-off icon-white"></i> ';
+  }
+?>
 
 <div class="mod login">
   <div class="inner">
@@ -16,7 +24,7 @@
           </div>
 
           <div class="form-actions">
-            <input type="submit" class="btn btn-primary" value="<?php echo __('sign in') ?>" />
+            <button type="submit" class="btn btn-primary"><?php echo $icon . __('Sign in') ?></button>
           </div>
         </fieldset>
       </form>
