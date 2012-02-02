@@ -36,7 +36,6 @@
       [?php include_partial('<?php echo $this->getModuleName() ?>/form_fieldset', array('<?php echo $this->getSingularName() ?>' => $<?php echo $this->getSingularName() ?>, 'form' => $form, 'fields' => $fields, 'fieldset' => $fieldset)) ?]
     [?php endforeach; ?]
 
-
 <?php if($this->configuration->hasEditPartial() && $this->configuration->hasNewPartial()) : ?>
   </div>
 <?php elseif ($this->configuration->hasNewPartial()) : ?>
@@ -48,6 +47,7 @@
   </div>
   [?php endif; ?]
 <?php endif; ?>
+
     [?php include_partial('<?php echo $this->getModuleName() ?>/form_actions', array('<?php echo $this->getSingularName() ?>' => $<?php echo $this->getSingularName() ?>, 'form' => $form, 'configuration' => $configuration, 'helper' => $helper)) ?]
 
   </form>

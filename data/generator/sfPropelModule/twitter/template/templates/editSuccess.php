@@ -3,7 +3,6 @@
 
 <div id="sf_admin_container">
 
-
   <h2 class="mbl">
     [?php echo <?php echo $this->getI18NString('edit.title') ?> ?]
 
@@ -30,4 +29,5 @@
   <div id="sf_admin_footer">
     [?php include_partial('<?php echo $this->getModuleName() ?>/form_footer', array('<?php echo $this->getSingularName() ?>' => $<?php echo $this->getSingularName() ?>, 'form' => $form, 'configuration' => $configuration)) ?]
   </div>
+
 </div>
