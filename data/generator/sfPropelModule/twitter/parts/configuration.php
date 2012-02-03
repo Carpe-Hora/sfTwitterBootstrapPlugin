@@ -103,4 +103,19 @@ abstract class Base<?php echo ucfirst($this->getModuleName()) ?>GeneratorConfigu
                                         : array()) ?>;
 <?php unset($this->config['new']['partial']) ?>
   }
+
+  public function hasShowPartial()
+  {
+    return <?php echo $this->asPhp(isset($this->config['show']['partial']) ? true : false) ?>;
+  }
+
+  public function getShowPartial()
+  {
+    return <?php echo $this->asPhp(isset($this->config['show']['partial'])
+                                        ? is_array($this->config['show']['partial'])
+                                            ? $this->config['show']['partial']
+                                            : array($this->config['show']['partial'])
+                                        : array()) ?>;
+<?php unset($this->config['show']['partial']) ?>
+  }
 }

@@ -2,9 +2,9 @@
 [?php include_partial('<?php echo $this->getModuleName() ?>/assets') ?]
 
 <div id="sf_admin_container">
-  <?php if($this->configuration->hasEditPartial()) : ?>
+  <?php if($this->configuration->hasShowPartial()) : ?>
     <div class="sf_admin_right_column">
-    <?php foreach($this->configuration->getEditPartial() as $partial): ?>
+    <?php foreach($this->configuration->getShowPartial() as $partial): ?>
       [?php include_partial('<?php echo $partial ?>', array('form' => $form, '<?php echo $this->getSingularName() ?>' => $<?php echo $this->getSingularName() ?>, 'helper' => $helper, 'configuration' => $configuration)) ?]
     <?php endforeach; ?>
     </div>
@@ -30,7 +30,7 @@
 
   [?php include_partial('show_actions', array('<?php echo $this->getSingularName() ?>' => $<?php echo $this->getSingularName() ?>, 'configuration' => $configuration, 'helper' => $helper)) ?]
 
-<?php if($this->configuration->hasEditPartial()) : ?>
+<?php if($this->configuration->hasShowPartial()) : ?>
   </div>
 <?php endif; ?>
 </div>
