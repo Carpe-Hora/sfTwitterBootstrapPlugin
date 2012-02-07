@@ -19,6 +19,10 @@ Preview of edit:
 
 ![Preview of edit](https://github.com/real-chocopanda/sfTwitterBootstrapPlugin/raw/master/doc/edit.png)
 
+Preview of show (with support of partials on the right, see below):
+
+![Preview of show](https://github.com/real-chocopanda/sfTwitterBootstrapPlugin/raw/master/doc/show.png)
+
 Preview of login:
 
 ![Preview of login](https://github.com/real-chocopanda/sfTwitterBootstrapPlugin/raw/master/doc/login.png)
@@ -115,6 +119,41 @@ generator:
     ...
     theme:                 twitter
     ...
+```
+
+## Enable the show views
+
+Edit ``generator.yml``
+
+```yaml
+generator:
+  ...
+  param:
+    ...
+    with_show: true
+    ...
+```
+
+The displayed fields can be customized exactly like the edit fields, with a `show` section:
+
+```yaml
+generator:
+  ...
+  config:
+    show:
+      display:       [id, lastname, firstname, surname, _country, gender, _sports, is_active, has_historic]
+```
+
+To include a `show` link in each line of the list view, use the `_show` object action:
+
+```yaml
+generator:
+  ...
+  config:
+    list:
+      object_action:
+        ...
+        _show: { action: _show }
 ```
 
 ## Include a slot in all your screens :
