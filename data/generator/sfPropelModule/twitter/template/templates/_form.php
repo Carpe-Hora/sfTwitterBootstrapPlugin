@@ -33,8 +33,23 @@
     [?php endif; ?]
 
     [?php foreach ($configuration->getFormFields($form, $form->isNew() ? 'new' : 'edit') as $fieldset => $fields): ?]
-      [?php include_partial('<?php echo $this->getModuleName() ?>/form_fieldset', array('<?php echo $this->getSingularName() ?>' => $<?php echo $this->getSingularName() ?>, 'form' => $form, 'fields' => $fields, 'fieldset' => $fieldset)) ?]
+<?php if ($this->extendFieldsetTemplate()): ?>
+      [?php switch ($fieldset):
+<?php if ($this->hasBehavior('lk_faceable')): ?>
+        case 'Faces': ?]
+          [?php foreach ($form->getFaceScopes() as $scope): ?]
+            [?php include_partial('<?php echo $this->getModuleName() ?>/form_fieldset_faces', array('<?php echo $this->getSingularName() ?>' => $<?php echo $this->getSingularName() ?>, 'form' => $form[$scope], 'fields' => $fields, 'fieldset' => $fieldset)) ?]
+            [?php endforeach; ?]
+          [?php break;
+<?php endif ?>
+        default: ?]
+<?php endif ?>
+        [?php include_partial('<?php echo $this->getModuleName() ?>/form_fieldset', array('<?php echo $this->getSingularName() ?>' => $<?php echo $this->getSingularName() ?>, 'form' => $form, 'fields' => $fields, 'fieldset' => $fieldset)) ?]
+<?php if ($this->extendFieldsetTemplate()): ?>
+      [?php endswitch; ?]
+<?php endif ?>
     [?php endforeach; ?]
+
 
 <?php if($this->configuration->hasEditPartial() && $this->configuration->hasNewPartial()) : ?>
   </div>
@@ -47,7 +62,6 @@
   </div>
   [?php endif; ?]
 <?php endif; ?>
-
     [?php include_partial('<?php echo $this->getModuleName() ?>/form_actions', array('<?php echo $this->getSingularName() ?>' => $<?php echo $this->getSingularName() ?>, 'form' => $form, 'configuration' => $configuration, 'helper' => $helper)) ?]
 
   </form>
