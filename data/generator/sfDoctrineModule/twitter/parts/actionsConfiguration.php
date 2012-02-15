@@ -39,3 +39,9 @@
     return <?php echo $this->asPhp(isset($this->config['list']['batch_actions']) ? $this->config['list']['batch_actions'] : array('_delete' => null)) ?>;
 <?php unset($this->config['list']['batch_actions']) ?>
   }
+
+  public function getShowActions()
+  {
+    return <?php echo $this->asPhp(isset($this->config['show']['actions']) ? $this->config['show']['actions'] : array('_delete' => null, '_list' => null, '_edit' => null)) ?>;
+<?php unset($this->config['show']['actions']) ?>
+  }
