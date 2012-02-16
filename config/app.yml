@@ -16,3 +16,4 @@ all:
     top_link_to_fieldset:         true
     display_top_pagination:       true
     use_icons_in_button:          true
+    breadcrumb_root_name:         Home

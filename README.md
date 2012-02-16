@@ -19,6 +19,10 @@ Preview of edit:
 
 ![Preview of edit](https://github.com/real-chocopanda/sfTwitterBootstrapPlugin/raw/master/doc/edit.png)
 
+Preview of show (with support of partials on the right, see below):
+
+![Preview of show](https://github.com/real-chocopanda/sfTwitterBootstrapPlugin/raw/master/doc/show.png)
+
 Preview of login:
 
 ![Preview of login](https://github.com/real-chocopanda/sfTwitterBootstrapPlugin/raw/master/doc/login.png)
@@ -141,12 +145,48 @@ generator:
         ...
         newFormActions:  {label: "New form action", icon: "icon-comment"}
 
-### include partials on the right
+### Enable the show views
+
+Edit ``generator.yml``
+
+```yaml
+generator:
+  ...
+  param:
+    ...
+    with_show: true
+    ...
+```
+
+The displayed fields can be customized exactly like the edit fields, with a `show` section:
+
+```
+generator:
+  ...
+  config:
+    show:
+      display:       [id, lastname, firstname, surname, _country, gender, _sports, is_active, has_historic]
+```
+
+To include a `show` link in each line of the list view, use the `_show` object action:
 
 ```yaml
 generator:
   ...
   config:
+    list:
+      object_action:
+        ...
+        _show: { action: _show }
+```
+
+### Include partials on the right
+
+```yaml
+generator:
+  ...
+  config:
+<<<<<<< HEAD
     ...
     edit:
       ...
@@ -163,7 +203,6 @@ Some partials are bundeled with the plugin :
 missing : Timestampable, Geocodable, I18n, Taggable, Ratable, Commentable, NestedSet, Sluggable
 
 ![Preview of extra partials](https://github.com/real-chocopanda/sfTwitterBootstrapPlugin/raw/master/doc/behavior-templates.png)
-
 
 ## Include a slot in all your screens :
 
@@ -198,6 +237,10 @@ Overwrite the signinSuccess into ``apps/backend/modules/sfGuardAuth/templates/si
 
 You can follow _Step 3_ to  _Step 5_ from the [readme file of sfAdminDashPlugin](https://github.com/kbond/sfAdminDashPlugin/blob/master/README.md) to setup dashboard / menu items.
 We use different icons in comparison to sfAdminDash. Check the folder ``images``.
+
+An additional parameter is available:
+
+* ```breadcrumb_root_name: Home # string used as root of breadcrumb```
 
 ## Display custom field in a form
 

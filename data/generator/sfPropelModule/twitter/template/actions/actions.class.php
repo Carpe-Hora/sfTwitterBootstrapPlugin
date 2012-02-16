@@ -32,6 +32,10 @@ abstract class <?php echo $this->getGeneratedModuleName() ?>Actions extends <?ph
 <?php include dirname(__FILE__).'/../../parts/filterAction.php' ?>
 <?php endif; ?>
 
+<?php if (isset($this->params['with_show']) && $this->params['with_show'] == true ): ?>
+<?php include dirname(__FILE__).'/../../parts/showAction.php' ?>
+<?php endif; ?>
+
 <?php include dirname(__FILE__).'/../../parts/newAction.php' ?>
 
 <?php include dirname(__FILE__).'/../../parts/createAction.php' ?>

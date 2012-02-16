@@ -23,7 +23,12 @@ abstract class sfTwitterModelGeneratorHelper extends sfModelGeneratorHelper
 
   public function linkToEdit($object, $params)
   {
-    return '<li><i class="icon-pencil"></i> '.link_to(__($params['label'], array(), 'sf_admin'), $this->getUrlForAction('edit'), $object).'</li>';
+    return '<li><i class="icon-pencil"></i> '.link_to(__($params['label'], array(), 'sf_admin'), $this->getUrlForAction('edit'), $object, $params['params']).'</li>';
+  }
+
+  public function linkToShow($object, $params)
+  {
+    return '<li><i class="icon-zoom-in"></i> '.link_to(__($params['label'], array(), 'sf_admin'), $this->getUrlForAction('show'), $object, $params['params']).'</li>';
   }
 
   public function linkToDelete($object, $params)
@@ -62,6 +67,17 @@ abstract class sfTwitterModelGeneratorHelper extends sfModelGeneratorHelper
     }
 
     return link_to($icon . __($params['label'], array(), 'sf_admin'), $this->getUrlForAction('delete'), $object, array('class' => 'btn btn-danger delete mlm', 'onclick' => $confirm));
+  }
+
+  public function linkToEditBtn($object, $params)
+  {
+    $icon = '';
+    if(sfTwitterBootstrap::getProperty('use_icons_in_button', false))
+    {
+      $icon = '<i class="icon-pencil icon-white"></i> ';
+    }
+
+    return link_to($icon . __($params['label'], array(), 'sf_admin'), $this->getUrlForAction('edit'), $object, array('class' => 'btn btn-primary mlm'));
   }
 
   public function linkToList($params)
