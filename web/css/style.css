@@ -181,6 +181,16 @@ ul.radio_list li label, ul.checkbox_list li label {
   text-align: left;
 }
 
+/* adjust input help in list view */
+.sf_admin_list .help-block {
+  margin-top: 0;
+}
+
+/* adjust select in batch_actions */
+.form-actions select {
+  margin-bottom: 0;
+}
+
 /* -----------------------------------------
     Spacing
 ----------------------------------------- */
@@ -290,6 +300,17 @@ p.logged { color: #999; text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25) }
 
 .sf_admin_show .control-group > label { padding-top:0; }
 .sf_admin_show fieldset.no-legend { padding-top: 18px; }
+
+.help-pagination {
+  display: inline-block;
+  *display: inline;
+  /* IE7 inline-block hack */
+  *zoom: 1;
+  vertical-align: middle;
+  padding-left: 5px;
+  margin-top: -5px;
+  color: #999999;
+}
 
 /* -----------------------------------------
     Partial
