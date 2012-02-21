@@ -14,7 +14,7 @@
                 // we calculate the modulo between the total result and the max_per_page to get the rest of the results
                 $nb = $pager->getNbResults() % $pager->getMaxPerPage();
               }
-              echo format_number_choice('[0] no item on this page|[1] 1 item on this page|(1,+Inf] %1% items on this page', array('%1%' => $nb), $nb, 'sf_admin')
+              echo format_number_choice(__('[0] no item on this page|[1] 1 item on this page|(1,+Inf] %1% items on this page'), array('%1%' => $nb), $nb, 'sf_admin')
             ?]
           </span>
         [?php endif; ?]
