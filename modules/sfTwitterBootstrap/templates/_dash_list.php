@@ -4,7 +4,7 @@
 ?>
 
 <div class="bd">
-  <ul class="icon-list">
+  <ul class="dash-icon-list">
     <?php foreach ($items as $key => $item): ?>
       <?php if (sfTwitterBootstrap::hasPermission($item, $sf_user)):?>
         <li>

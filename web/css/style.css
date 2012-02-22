@@ -293,8 +293,15 @@ p.logged { color: #999; text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25) }
 
 .table-result { font-weight:bold; padding:5px; line-height: 36px;}
 
-.icon-list li { -moz-transition: all 0.3s linear 0s; }
-.icon-list li:hover { background-color:#DDD; border-radius:20px; }
+.dash-icon-list li { -moz-transition: all 0.3s linear 0s; }
+.dash-icon-list li:hover { background-color:#DDD; border-radius:20px; }
+
+.dash h3, .dash h5 {
+  line-height: 36px;
+}
+.dash h5 {
+  font-size: 14px;
+}
 
 .back { background:url("../images/list_icon.png") no-repeat top left;}
 
