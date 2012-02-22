@@ -1,3 +1,5 @@
+This branch use Bootstrap 2.0 for Bootstrap 1.4 switch to 1.0 branch
+
 # sfTwitterBootstrapPlugin
 
 This symfony1 plugin provides a dashboard/menu and a theme for the admin generator for your backend. It is based on the [Twitter Bootstrap](http://twitter.github.com/bootstrap/).
