@@ -8,7 +8,11 @@
     <?php else: ?>
 
       <?php
-        $params['params'] = is_array($params['params']) ? array_merge($params['params'], array('class' => 'btn')) : array('class' => 'btn') ;
+        $params['params'] = is_array($params['params']) ? array_merge($params['params'], array('class' => 'btn')) : array('class' => 'btn');
+        if(sfTwitterBootstrap::getProperty('use_icons_in_button', false))
+        {
+          $params['label'] = isset($params['icon']) ? '<i class="'.$params['icon'].'"></i> ' . $params['label'] : $params['label'];
+        }
         echo $this->addCredentialCondition($this->getLinkToAction($name, $params, false), $params)."\n"
       ?>
 
@@ -32,11 +36,11 @@
 
     <form action="[?php echo url_for('<?php echo $this->getUrlForAction('collection') ?>', array('action' => 'filter')) ?]" method="post">
       <div class="modal-header">
-        <a href="#" class="close">&times;</a>
+        <a class="close" data-dismiss="modal">&times;</a>
         <h3>[?php echo __('More filters') ?]</h3>
       </div>
       <div class="modal-body">
-        <table cellspacing="0">
+        <table class="table" cellspacing="0">
           <tbody>
             [?php foreach ($configuration->getFormFilterFields($filters) as $name => $field): ?]
             [?php if ((isset($filters[$name]) && $filters[$name]->isHidden()) || (!isset($filters[$name]) && $field->isReal())) continue ?]
@@ -54,14 +58,22 @@
       </div>
       <div class="modal-footer">
         [?php echo $filters->renderHiddenFields() ?]
-        <a id="close-modal-filters" href="#" class="btn info">[?php echo __('Close window') ?]</a>
+        <a id="close-modal-filters" href="#" class="btn btn-info">[?php echo __('Close window') ?]</a>
         [?php echo link_to(__('Reset', array(), 'sf_admin'), '<?php echo $this->getUrlForAction('collection') ?>', array('action' => 'filter'), array('class' => 'btn', 'query_string' => '_reset', 'method' => 'post')) ?]
-        <input type="submit" class="btn primary" value="[?php echo __('Filter', array(), 'sf_admin') ?]" />
+        <input type="submit" class="btn btn-primary" value="[?php echo __('Filter', array(), 'sf_admin') ?]" />
       </div>
     </form>
   </div>
 
+  [?php
+    $icon = '';
+    if(sfTwitterBootstrap::getProperty('use_icons_in_button', false))
+    {
+      $icon = '<i class="icon-plus-sign icon-white"></i> ';
+    }
+  ?]
+
   <div class="fRight" style="margin-right: 4px">
-    <a id="more-filters" href="#more-filters" class="btn info">[?php echo __('More filters') ?]</a>
+    <a id="more-filters" href="#more-filters" class="btn btn-info">[?php echo $icon . __('More filters') ?]</a>
   </div>
 <?php endif; ?>

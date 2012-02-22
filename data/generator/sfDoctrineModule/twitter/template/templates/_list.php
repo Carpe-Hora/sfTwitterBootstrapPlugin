@@ -11,7 +11,7 @@
       [?php include_partial('<?php echo $this->getModuleName() ?>/pagination', array('pager' => $pager)) ?]
     <?php endif; ?>
 
-    <table class="sortTable bordered-table zebra-striped mbn">
+    <table class="table table-bordered table-striped mbn">
       <thead>
         <tr>
 <?php if ($this->configuration->getValue('list.batch_actions')): ?>

@@ -1,5 +1,5 @@
 /* --------------------------------------------------
-Table of Contents
+    Table of Contents
 -----------------------------------------------------
 :: General
 :: Bootstrap surclass
@@ -12,9 +12,8 @@ Table of Contents
 
 
 
-
 /* -----------------------------------------
-General
+    General
 ----------------------------------------- */
 body { padding-top: 60px; }
 body .breadcrumb { margin-top: -20px;}
@@ -53,7 +52,7 @@ h6, .h6 { color: #404040; }
 
 
 /* -----------------------------------------
-Bootstrap surclass
+    Bootstrap surclass
 ----------------------------------------- */
 
 .primary-color { color:#049CDB;}
@@ -66,20 +65,25 @@ body > div.container-fluid { padding-bottom: 20px; }
 .table .actions a { vertical-align: 6px; }
 .table ul { margin:0px;}
 .table-action li { display:inline-block;}
-.table-action .edit { background:url("../images/edit_icon.png") no-repeat top left; padding-left: 20px; }
-.table-action .delete { background:url("../images/delete_icon.png") no-repeat top left; padding-left: 20px; }
-.table-action .show { background:url("../images/show_icon.png") no-repeat top left; padding-left: 20px; }
+
+.table th {
+  padding: 4px 8px 11px 8px;
+}
 
 .close { line-height: 18.5px; }
 
-.zebra-striped tbody .greystock:first-child td {
-  background-color: #E7EBEB;
-}
-
 .input .arrow { vertical-align: 40px; }
+
+.form-actions {
+  min-height: 26px;
+}
 
 form .clearfix.error > div > label {
   color: #B94A48;
+}
+
+input.btn-fix-margin {
+  margin-bottom: 3px;
 }
 
 input[type="checkbox"] {
@@ -98,6 +102,7 @@ input[type="checkbox"][name*="is_empty"] {
 input[type="checkbox"][name*="is_empty"] + label {
   width: auto;
   padding-top: 0;
+  display: inline;
 }
 
 /* styling plain widget (http://trac.symfony-project.org/changeset/29247) */
@@ -105,18 +110,35 @@ div.input div {
   padding-top: 8px;
 }
 
+div.input-plain {
+  padding-right: 20px;
+}
+
 fieldset {
   border:1px solid #D5D8D8;
+  margin-bottom: 18px;
 }
 
 fieldset legend {
   margin-left: 140px;
   padding: 0 10px;
+  border: 0;
+  width: auto;
+  line-height: 20px;
+}
+
+fieldset.no-legend {
+  padding-top: 18px;
+}
+
+.error-block {
+  display: block;
 }
 
 .loginFieldset { border:none; }
-.loginFieldset legend { padding: 10px 10px 0 10px; }
-.loginFieldset div.error .help-block { margin-left: 150px; }
+.loginFieldset legend { padding: 10px 0 0 160px; margin-bottom: 0; margin-left: 0; }
+.loginFieldset div.error .help-block { margin-left: 160px; }
+.loginFieldset .form-actions { margin-bottom: 0; }
 
 .pagination {
   margin: 0;
@@ -128,10 +150,6 @@ fieldset legend {
   border-right-color:#ddd;
   border-right-color:rgba(0, 0, 0, 0.15);
   *border-right-color:#ddd;
-}
-
-.pagination .last a {
-  border: 0;
 }
 
 .dropdown-menu img {
@@ -168,8 +186,18 @@ ul.radio_list li label, ul.checkbox_list li label {
   text-align: left;
 }
 
+/* adjust input help in list view */
+.sf_admin_list .help-block {
+  margin-top: 0;
+}
+
+/* adjust select in batch_actions */
+.form-actions select {
+  margin-bottom: 0;
+}
+
 /* -----------------------------------------
-Spacing
+    Spacing
 ----------------------------------------- */
 /* spacing helpers
 p,m = padding,margin
@@ -210,9 +238,8 @@ s,m,l,n = small(5px),medium(10px),large(20px),none(0px)
 .mlm,.mhm,.mam{margin-left:10px !important}
 .mll,.mhl,.mal{margin-left:20px !important}
 
-
 /* -----------------------------------------
-Module
+    Module
 ----------------------------------------- */
 
 /* mod */
@@ -249,13 +276,15 @@ Module
 .filter form .input { margin-left: 98px; }
 
 /* -----------------------------------------
-Top Bar
+    Top Bar
 ----------------------------------------- */
-.logged { background:url("../images/user_login.png") no-repeat center left; padding: 0 10px 0 20px; }
+.logged { padding: 11px 10px 0 20px; }
 p.logout img { height: 20px; vertical-align: -25%; }
+p.logout.pull-right { padding-top: 12px; }
+p.logged { color: #999; text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25) }
 
 /* -----------------------------------------
-Main Content
+    Main Content
 ----------------------------------------- */
 
 .smad { margin-top: 20px; padding:10px 20px; background-color:#F5F5F5; border-top:1px solid #DDD; border-bottom:1px solid #DDD;}
@@ -265,8 +294,15 @@ Main Content
 
 .table-result { font-weight:bold; padding:5px; line-height: 36px;}
 
-.icon-list li { -moz-transition: all 0.3s linear 0s; }
-.icon-list li:hover { background-color:#DDD; border-radius:20px; }
+.dash-icon-list li { -moz-transition: all 0.3s linear 0s; }
+.dash-icon-list li:hover { background-color:#DDD; border-radius:20px; }
+
+.dash h3, .dash h5 {
+  line-height: 36px;
+}
+.dash h5 {
+  font-size: 14px;
+}
 
 .back { background:url("../images/list_icon.png") no-repeat top left;}
 
@@ -274,15 +310,111 @@ Main Content
 .actions li { display: inline }
 #batch_checked_ids { display: none; }
 
+.sf_admin_show .control-group > label { padding-top:0; }
+
+.help-pagination {
+  display: inline-block;
+  *display: inline;
+  /* IE7 inline-block hack */
+  *zoom: 1;
+  vertical-align: middle;
+  padding-left: 5px;
+  margin-top: -5px;
+  color: #999999;
+}
+
 /* -----------------------------------------
-Partial
+    Partial
 ----------------------------------------- */
 .sf_admin_right_column {float:right;width:300px;padding:0 0 0 10px;}
 .sf_admin_with_right_colum {margin-right:320px;}
 
-.item-information{font-size:0.8em;font-style: italic; text-align:right;}
-.item-record{margin-top:1em; padding-top: 0.5em;}
-.item-record.other{border-top: 1px solid #D5D8D8; }
+.item-information {font-size:0.8em;font-style: italic; text-align:right;}
+.item-record {margin-top:1em; padding-top: 0.5em;}
+.item-record.other {border-top: 1px solid #D5D8D8; }
 
-.sf_admin_show label { padding-top:0; }
-.sf_admin_show .row { margin-bottom: 18px; margin-left: 0; line-height: 18px; }
+/* -----------------------------------------
+    headerSortUp & headerSortDown import from bootstrap 1.4.0
+----------------------------------------- */
+table .header {
+  cursor: pointer;
+}
+table .header:after {
+  content: "";
+  float: right;
+  margin-top: 7px;
+  border-width: 0 4px 4px;
+  border-style: solid;
+  border-color: #000 transparent;
+  visibility: hidden;
+}
+table .headerSortUp, table .headerSortDown {
+  background-color: rgba(141, 192, 219, 0.25);
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+}
+table .header:hover:after {
+  visibility: visible;
+}
+table .headerSortDown:after, table .headerSortDown:hover:after {
+  visibility: visible;
+  filter: alpha(opacity=60);
+  -khtml-opacity: 0.6;
+  -moz-opacity: 0.6;
+  opacity: 0.6;
+}
+table .headerSortUp:after {
+  border-bottom: none;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 4px solid #000;
+  visibility: visible;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  filter: alpha(opacity=60);
+  -khtml-opacity: 0.6;
+  -moz-opacity: 0.6;
+  opacity: 0.6;
+}
+table .blue {
+  color: #049cdb;
+  border-bottom-color: #049cdb;
+}
+table .headerSortUp.blue, table .headerSortDown.blue {
+  background-color: #ade6fe;
+}
+table .green {
+  color: #46a546;
+  border-bottom-color: #46a546;
+}
+table .headerSortUp.green, table .headerSortDown.green {
+  background-color: #cdeacd;
+}
+table .red {
+  color: #9d261d;
+  border-bottom-color: #9d261d;
+}
+table .headerSortUp.red, table .headerSortDown.red {
+  background-color: #f4c8c5;
+}
+table .yellow {
+  color: #ffc40d;
+  border-bottom-color: #ffc40d;
+}
+table .headerSortUp.yellow, table .headerSortDown.yellow {
+  background-color: #fff6d9;
+}
+table .orange {
+  color: #f89406;
+  border-bottom-color: #f89406;
+}
+table .headerSortUp.orange, table .headerSortDown.orange {
+  background-color: #fee9cc;
+}
+table .purple {
+  color: #7a43b6;
+  border-bottom-color: #7a43b6;
+}
+table .headerSortUp.purple, table .headerSortDown.purple {
+  background-color: #e2d5f0;
+}

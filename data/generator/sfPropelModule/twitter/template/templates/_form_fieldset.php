@@ -3,7 +3,7 @@
   <a name="[?php echo preg_replace('/[^a-z0-9_]/', '_', strtolower($fieldset)) ?]"></a>
 [?php endif; ?]
 
-<fieldset id="sf_fieldset_[?php echo preg_replace('/[^a-z0-9_]/', '_', strtolower($fieldset)) ?]">
+<fieldset id="sf_fieldset_[?php echo preg_replace('/[^a-z0-9_]/', '_', strtolower($fieldset)) ?]" [?php if ('NONE' == $fieldset): ?]class="no-legend"[?php endif; ?]>
   [?php if ('NONE' != $fieldset): ?]
     <legend>[?php echo __($fieldset, array(), '<?php echo $this->getI18nCatalogue() ?>') ?]</legend>
   [?php endif; ?]

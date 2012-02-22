@@ -6,10 +6,10 @@
 class sfWidgetFormSchemaFormatterTwitterBootstrap extends sfWidgetFormSchemaFormatter
 {
     protected
-    $rowFormat              = "%error%%label%\n  <div class=\"input\">%field%%help%\n%hidden_fields%</div>\n",
+    $rowFormat              = "%error%%label%\n  <div class=\"controls\">%field%%help%\n%hidden_fields%</div>\n",
     $errorRowFormat         = "%errors%", // "<div class=\"alert-message error\">\n%errors%</div>\n",
     $errorListFormatInARow  = "%errors%", // "  <div class=\"alert-message error\">\n%errors% </div>\n",
-    $errorRowFormatInARow   = "<span class=\"help-block\">%error%</span>", // "    <p>%error%</p>\n",
+    $errorRowFormatInARow   = "<span class=\"help-block error-block\">%error%</span>", // "    <p>%error%</p>\n",
     $helpFormat             = '<span class="help-block">%help%</span>',
     $decoratorFormat        = "<ul class=\"man\">\n  %content%</ul>";
 
@@ -47,6 +47,8 @@ class sfWidgetFormSchemaFormatterTwitterBootstrap extends sfWidgetFormSchemaForm
                 }
             }
         }
+
+        $attributes['class'] = isset($attributes['class']) ? $attributes['class'].' control-label' : 'control-label';
 
         return $this->widgetSchema->renderContentTag('label', $labelName, $attributes);
     }

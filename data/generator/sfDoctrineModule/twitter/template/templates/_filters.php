@@ -22,9 +22,20 @@
     </td>
     <?php endforeach; ?>
     <td>
-        [?php echo $filters->renderHiddenFields() ?]
-        <input type="submit" class="btn info" value="[?php echo __('Filter', array(), 'sf_admin') ?]" />
-        [?php echo link_to(__('Reset', array(), 'sf_admin'), '<?php echo $this->getUrlForAction('collection') ?>', array('action' => 'filter'), array('class' => 'btn', 'query_string' => '_reset', 'method' => 'post')) ?]
+      [?php echo $filters->renderHiddenFields() ?]
+
+      [?php
+        $icon_filter = '';
+        $icon_reset  = '';
+        if(sfTwitterBootstrap::getProperty('use_icons_in_button', false))
+        {
+          $icon_filter = '<i class="icon-search icon-white"></i> ';
+          $icon_reset  = '<i class="icon-refresh"></i> ';
+        }
+      ?]
+
+      <button type="submit" class="btn btn-info btn-fix-margin">[?php echo $icon_filter . __('Filter', array(), 'sf_admin') ?]</button>
+      [?php echo link_to($icon_reset . __('Reset', array(), 'sf_admin'), '<?php echo $this->getUrlForAction('collection') ?>', array('action' => 'filter'), array('class' => 'btn', 'query_string' => '_reset', 'method' => 'post')) ?]
     </td>
   </tr>
 </form>

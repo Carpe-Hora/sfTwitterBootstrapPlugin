@@ -45,7 +45,7 @@ In ``apps/backend/config/view.yml``
 ```yaml
 default:
   stylesheets:
-    - /sfTwitterBootstrapPlugin/bootstrap/bootstrap.css
+    - /sfTwitterBootstrapPlugin/bootstrap/docs/assets/css/bootstrap.css # compiled css are now in the docs
     - /sfTwitterBootstrapPlugin/css/style.css
     - /sfTwitterBootstrapPlugin/css/jquery-ui-1.8.16.custom.css # For date pickers ...
     - main.css
@@ -55,9 +55,10 @@ default:
     - "/sfTwitterBootstrapPlugin/js/jquery.tablesorter.min.js"
     - "/sfTwitterBootstrapPlugin/js/google-code-prettify/prettify.js"
     - "/sfTwitterBootstrapPlugin/bootstrap/js/bootstrap-dropdown.js"
-    - "/sfTwitterBootstrapPlugin/bootstrap/js/bootstrap-twipsy.js"
+    - "/sfTwitterBootstrapPlugin/bootstrap/js/bootstrap-tooltip.js"
     - "/sfTwitterBootstrapPlugin/bootstrap/js/bootstrap-scrollspy.js"
     - "/sfTwitterBootstrapPlugin/bootstrap/js/bootstrap-modal.js"
+    - "/sfTwitterBootstrapPlugin/bootstrap/js/bootstrap-alert.js"
     - "/sfTwitterBootstrapPlugin/js/application.js"
     - "/sfTwitterBootstrapPlugin/js/bootbox/bootbox.min.js"
     - "/sfTwitterBootstrapPlugin/js/jquery-ui-1.8.16.custom.min.js" # For date pickers ...
@@ -121,7 +122,40 @@ generator:
     ...
 ```
 
-## Enable the show views
+### Add a custom icon in your button
+
+Edit ``app.yml``:
+
+```yaml
+all:
+  sf_twitter_bootstrap:
+    ...
+    # display bootstrap icon before text in all button
+    use_icons_in_button:     true
+```
+
+In your ``generator.yml`` you can now add a custom icon to your button. Just add a ``icon`` parameter to the new action.
+
+```yaml
+generator:
+  ...
+  config:
+    ...
+    list:
+      actions:
+        ...
+        newListActions:  {label: "New list action", icon: "icon-download"}
+      object_actions:
+        ...
+        newObjectActions: {label: "New object action", icon: "icon-asterisk"}
+    edit:
+      ...
+      actions:
+        ...
+        newFormActions:  {label: "New form action", icon: "icon-comment"}
+```
+
+### Enable the show views
 
 Edit ``generator.yml``
 
@@ -131,7 +165,6 @@ generator:
   param:
     ...
     with_show: true
-    ...
 ```
 
 The displayed fields can be customized exactly like the edit fields, with a `show` section:
@@ -156,6 +189,32 @@ generator:
         _show: { action: _show }
 ```
 
+### Include partials on the right
+
+```yaml
+generator:
+  ...
+  config:
+    ...
+    edit:
+      ...
+      partial: ['module/partial']
+```
+
+Some partials are bundeled with the plugin :
+
+#### Propel behaviors
+
+* versionable: ```propel_behaviors/versionable_version_list```
+* auditable: ```propel_behaviors/auditable_log_list```
+
+missing : Timestampable, Geocodable, I18n, Taggable, Ratable, Commentable, NestedSet, Sluggable
+
+![Preview of extra partials](https://github.com/real-chocopanda/sfTwitterBootstrapPlugin/raw/master/doc/behavior-templates.png)
+
+#### Doctrine behaviors
+Unfortunately, Doctrine doesn't add cool method to retrieve information from its behavior, like Propel did.
+
 ## Include a slot in all your screens :
 
 Edit ``view.yml``
@@ -175,7 +234,7 @@ $formatterObj = $this->widgetSchema->getFormFormatter();
 $formatterObj->setValidatorSchema($this->getValidatorSchema());
 ```
 
-Of course, if you are using an admin generator it's automatic !!
+Of course, if you are using an admin generator it's automatic !
 
 ## sfGuard signin form
 
@@ -190,30 +249,29 @@ Overwrite the signinSuccess into ``apps/backend/modules/sfGuardAuth/templates/si
 You can follow _Step 3_ to  _Step 5_ from the [readme file of sfAdminDashPlugin](https://github.com/kbond/sfAdminDashPlugin/blob/master/README.md) to setup dashboard / menu items.
 We use different icons in comparison to sfAdminDash. Check the folder ``images``.
 
-
-An additional parameter is available:
-
-* ```breadcrumb_root_name: Home # string used as root of breadcrumb```
-
-## include partials on the right
+An additional parameter is available, edit ``app.yml``
 
 ```yaml
-generator:
-  ...
-  config:
+
+all:
+  sf_twitter_bootstrap:
     ...
-    edit:
-      ...
-      partial: ['module/partial']
+    # string used as root of breadcrumb
+    breadcrumb_root_name: Home
 ```
 
-Some partials are bundeled with the plugin :
+## Display custom field in a form
 
-### Propel behaviors
+We often need to extends form display in the admin generator to display additional information or a plain text field, etc .. To do that, you need to indicate a partial in generator.yml (like `_member_id`) and use this template to have a nice render :
 
-* versionable: ```propel_behaviors/versionable_version_list```
-* auditable: ```propel_behaviors/auditable_log_list```
+``` php
+  <div class="control-group sf_admin_form_row sf_admin_text">
+    <label class="control-label" for="member_id">Member</label>
+    <div class="controls">
+      <?php echo $form['member_id']->render(); ?>
+      <div class="input-plain">&raquo; <?php echo $form->getObject()->getMember() ?></div>
+    </div>
+  </div>
+```
 
-missing : Timestampable, Geocodable, I18n, Taggable, Ratable, Commentable, NestedSet, Sluggable
-
-![Preview of extra partials](https://github.com/real-chocopanda/sfTwitterBootstrapPlugin/raw/master/doc/behavior-templates.png)
+Of course, you will have to edit it (and replace php action with yours) but keep the html structure.
