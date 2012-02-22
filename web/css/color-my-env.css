@@ -8,14 +8,7 @@
   background-image: -moz-linear-gradient(top, #FF4120, #FF8120);
   background-image: -webkit-linear-gradient(top, #FF4120, #FF8120);
   background-image: -ms-linear-gradient(top, #FF4120, #FF8120);
-
-  background-image: -webkit-gradient(
-    linear,
-    left top,
-    left top,
-    color-stop(0, #FF4120),
-    color-stop(1, #FF8120)
-  );
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#FF4120), to(#FF8120));
 }
 
 .dev.navbar .dropdown-menu li > a:hover, .dev.navbar .dropdown-menu .active > a, .dev.navbar .dropdown-menu .active > a:hover {
@@ -29,14 +22,7 @@
   background-image: -moz-linear-gradient(top, #e060ff, purple);
   background-image: -webkit-linear-gradient(top, #e060ff, purple);
   background-image: -ms-linear-gradient(top, #e060ff, purple);
-
-  background-image: -webkit-gradient(
-    linear,
-    left top,
-    left top,
-    color-stop(0, #e060ff),
-    color-stop(1, purple)
-  );
+  background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#e060ff), to(purple));
 }
 
 .preprod.navbar .dropdown-menu li > a:hover, .preprod.navbar .dropdown-menu .active > a, .preprod.navbar .dropdown-menu .active > a:hover {
