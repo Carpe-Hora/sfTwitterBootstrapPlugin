@@ -127,6 +127,10 @@ fieldset legend {
   line-height: 20px;
 }
 
+fieldset.no-legend {
+  padding-top: 18px;
+}
+
 .error-block {
   display: block;
 }
@@ -299,7 +303,6 @@ p.logged { color: #999; text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25) }
 #batch_checked_ids { display: none; }
 
 .sf_admin_show .control-group > label { padding-top:0; }
-.sf_admin_show fieldset.no-legend { padding-top: 18px; }
 
 .help-pagination {
   display: inline-block;
