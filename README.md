@@ -186,7 +186,7 @@ generator:
   ...
   config:
     list:
-      object_action:
+      object_actions:
         ...
         _show: { action: _show }
 ```
