@@ -44,9 +44,13 @@
           <tbody>
             [?php foreach ($configuration->getFormFilterFields($filters) as $name => $field): ?]
             [?php if ((isset($filters[$name]) && $filters[$name]->isHidden()) || (!isset($filters[$name]) && $field->isReal())) continue ?]
+              [?php $modalId = $filters[$name]->getWidget()->generateId('filters_field_modal_' . $name); ?]
               [?php include_partial('<?php echo $this->getModuleName() ?>/filters_field_modal', array(
                 'name'       => $name,
-                'attributes' => $field->getConfig('attributes', array('class' => sfTwitterBootstrap::guessLengthFromType($field->getType()))),
+                'attributes' => $field->getConfig('attributes', array(
+                  'class' => sfTwitterBootstrap::guessLengthFromType($field->getType()),
+                  'id'    => $modalId
+                )),
                 'label'      => $field->getConfig('label'),
                 'help'       => $field->getConfig('help'),
                 'form'       => $filters,
