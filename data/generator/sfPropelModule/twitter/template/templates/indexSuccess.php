@@ -7,7 +7,7 @@
     [?php include_partial('<?php echo $partial ?>', array('pager' => $pager, 'helper' => $helper)) ?]
   <?php endforeach; ?>
   </div>
-  <div class="sf_admin_with_right_colum">
+  <div class="sf_admin_with_right_column">
 <?php endif; ?>
 
   <h2 class="mbl">[?php echo <?php echo $this->getI18NString('list.title') ?> ?]</h2>

@@ -11,7 +11,7 @@
         [?php include_partial('<?php echo $partial ?>', array('form' => $form, '<?php echo $this->getSingularName() ?>' => $<?php echo $this->getSingularName() ?>, 'helper' => $helper, 'configuration' => $configuration)) ?]
       <?php endforeach; ?>
       </div>
-      <div class="sf_admin_with_right_colum">
+      <div class="sf_admin_with_right_column">
       [?php endif; ?]
     <?php endif; ?>
 
@@ -22,7 +22,7 @@
         [?php include_partial('<?php echo $partial ?>', array('form' => $form, '<?php echo $this->getSingularName() ?>' => $<?php echo $this->getSingularName() ?>, 'helper' => $helper, 'configuration' => $configuration)) ?]
       <?php endforeach; ?>
       </div>
-      <div class="sf_admin_with_right_colum">
+      <div class="sf_admin_with_right_column">
       [?php endif; ?]
     <?php endif; ?>
 

@@ -325,7 +325,7 @@ p.logged { color: #999; text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.25) }
     Partial
 ----------------------------------------- */
 .sf_admin_right_column {float:right;width:300px;padding:0 0 0 10px;}
-.sf_admin_with_right_colum {margin-right:320px;}
+.sf_admin_with_right_column {margin-right:320px;}
 
 .item-information {font-size:0.8em;font-style: italic; text-align:right;}
 .item-record {margin-top:1em; padding-top: 0.5em;}
