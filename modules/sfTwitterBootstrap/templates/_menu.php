@@ -37,9 +37,8 @@ use_helper('I18N');
               <?php endif; ?>
             <?php endif; ?>
 
-            <a data-toggle="dropdown" href="<?php echo url_for($category['url']); ?>" class="<?php echo $class; ?>">
+            <a href="<?php echo url_for($category['url']); ?>" class="<?php echo $class; ?>">
               <?php echo __(isset($category['name']) ? $category['name'] : $name) ?>
-              <b class="caret"></b>
             </a>
 
           <?php else: ?>
