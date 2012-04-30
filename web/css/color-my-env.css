@@ -25,13 +25,16 @@
   background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#e060ff), to(purple));
 }
 
-.preprod.navbar .dropdown-menu li > a:hover, .preprod.navbar .dropdown-menu .active > a, .preprod.navbar .dropdown-menu .active > a:hover {
-  background-color: #e060ff;
-}
+.preprod.navbar .dropdown-menu li > a:hover,
+.preprod.navbar .dropdown-menu .active > a,
+.preprod.navbar .dropdown-menu .active > a:hover { background-color: #e060ff; }
 
-.dev.navbar .nav > li > a, .preprod.navbar .nav > li > a, p.logged {
-  color: white;
-}
+.dev.navbar .nav > li > a,
+.preprod.navbar .nav > li > a,
+p.logged { color: white; }
+
+.dev.navbar .nav > li > a:hover,
+.preprod.navbar .nav > li > a:hover { color: black; }
 
 .dev p.logged a, .preprod p.logged a {
   color: black;
