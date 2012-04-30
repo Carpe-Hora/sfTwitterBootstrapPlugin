@@ -26,22 +26,24 @@ use_helper('I18N');
 
     <?php foreach ($categories as $name => $category): ?>
       <?php if (sfTwitterBootstrap::hasPermission($category, $sf_user)): ?>
-        <li class="dropdown">
-
-          <?php if (isset($category['url'])): ?>
-
+        <?php if (isset($category['url'])): ?>
+        <li>
             <?php $class = ''; ?>
+            <?php $caret = ''; ?>
             <?php if (isset($category['items'])): ?>
               <?php if (sfTwitterBootstrap::hasItemsMenu($category['items'])): ?>
                 <?php $class = 'dropdown-toggle'; ?>
+                <?php $caret = '<b class="caret"></b>' ?>
               <?php endif; ?>
             <?php endif; ?>
 
             <a href="<?php echo url_for($category['url']); ?>" class="<?php echo $class; ?>">
               <?php echo __(isset($category['name']) ? $category['name'] : $name) ?>
+              <?php echo $caret; ?>
             </a>
 
-          <?php else: ?>
+        <?php else: ?>
+        <li class="dropdown">
             <a data-toggle="dropdown" href="#" class="dropdown-toggle" >
               <?php echo __(isset($category['name']) ? $category['name'] : $name) ?>
               <b class="caret"></b>
@@ -52,7 +54,7 @@ use_helper('I18N');
             <ul class="dropdown-menu">
               <?php include_partial('sfTwitterBootstrap/menu_list', array('items' => $category['items'], 'items_in_menu' => true)) ?>
             </ul>
-          <?php endif; ?>
+        <?php endif; ?>
         </li>
       <?php endif; ?>
     <?php endforeach; ?>
@@ -66,4 +68,5 @@ use_helper('I18N');
   </ul>
 <?php elseif (!count($items)): ?>
   <?php echo __('sfTwitterBootstrap is not configured.'); ?>
+>>>>>>> Some fix on menu
 <?php endif; ?>
