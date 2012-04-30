@@ -27,27 +27,24 @@ use_helper('I18N');
      <?php foreach ($categories as $name => $category): ?>
          <?php if (sfTwitterBootstrap::hasPermission($category, $sf_user)): ?>
 
-             <?php if (!isset($category['url']) ||(isset($category['url']) && isset($category['items']) && sfTwitterBootstrap::hasItemsMenu($category['items']))): ?>
-             <li class="dropdown">
-                <a data-toggle="dropdown" href="#" class="dropdown-toggle" >
+            <?php if (isset($category['url'])) : ?>
+            <li>
+                <a href="<?php echo url_for($category['url']); ?>">
                 <?php echo __(isset($category['name']) ? $category['name'] : $name) ?>
+                </a>
+            <?php else : ?>
+            <li class="dropdown">
+                <a data-toggle="dropdown" href="#" class="dropdown-toggle" >
+                    <?php echo __(isset($category['name']) ? $category['name'] : $name) ?>
                     <b class="caret"></b>
-                    </a>
-             <?php else: ?>
-                <li>
-                   <a href="<?php echo url_for($category['url']); ?>">
-                   <?php echo __(isset($category['name']) ? $category['name'] : $name) ?>
-                       </a>
-             <?php endif; ?>
-
-             <?php if (isset($category['items']) && sfTwitterBootstrap::hasItemsMenu($category['items'])): ?>
-             <li class="dropdown">
+                </a>
+                <?php if (isset($category['items']) && sfTwitterBootstrap::hasItemsMenu($category['items'])): ?>
                 <ul class="dropdown-menu">
                 <?php include_partial('sfTwitterBootstrap/menu_list', array('items' => $category['items'], 'items_in_menu' => true)) ?>
-                    </ul>
-             <?php endif; ?>
-             </li>
-
+                </ul>
+                <?php endif; ?>
+            <?php endif; ?>
+            </li>
          <?php endif; ?>
      <?php endforeach; ?>
 
