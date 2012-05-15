@@ -36,7 +36,7 @@
 
     <form action="[?php echo url_for('<?php echo $this->getUrlForAction('collection') ?>', array('action' => 'filter')) ?]" method="post">
       <div class="modal-header">
-        <a class="close" data-dismiss="modal">&times;</a>
+        <a class="close" data-dismiss="modal">&#215;</a>
         <h3>[?php echo __('More filters') ?]</h3>
       </div>
       <div class="modal-body">
